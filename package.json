@@ -1,0 +1,133 @@
+{
+  "name": "cost-of-living",
+  "version": "0.1.0",
+  "description": "Cost of living calculator",
+  "author": "Damian Dzieduch <d.dzieduch@codeforaustralia.org>",
+  "private": true,
+  "scripts": {
+    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "serve": "http-server -o -c 1 -a localhost",
+    "dev": "npm-run-all --parallel watchify serve",
+    "lint": "eslint --ext .js,.vue src test/unit",
+    "test": "karma start karma.conf.js",
+    "build:autoprefix": "postcss docs/css/main.css -u autoprefixer -r",
+    "build:css": "node-sass --output-style compressed src/sass/main.scss docs/css/main.css",
+    "build:css:dev": "node-sass --output-style compact --source-map true src/sass/main.scss docs/css/main.css",
+    "build": "cross-env NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o dist/build.css ] -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js && npm run build:css && npm run build:autoprefix"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "vueify"
+    ]
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common.js"
+  },
+  "dependencies": {
+    "@digital.nsw/core": "^0.1.0",
+    "@digital.nsw/header": "^0.1.0",
+    "@gov.au/accordion": "^7.0.7",
+    "@gov.au/animate": "^1.0.12",
+    "@gov.au/body": "^2.1.1",
+    "@gov.au/breadcrumbs": "^3.0.4",
+    "@gov.au/buttons": "^3.0.6",
+    "@gov.au/callout": "^3.0.1",
+    "@gov.au/control-input": "^3.0.0",
+    "@gov.au/cta-link": "^2.1.9",
+    "@gov.au/direction-links": "^2.1.9",
+    "@gov.au/footer": "^3.0.3",
+    "@gov.au/grid-12": "^2.0.9",
+    "@gov.au/headings": "^2.0.10",
+    "@gov.au/inpage-nav": "^3.0.5",
+    "@gov.au/keyword-list": "^3.0.4",
+    "@gov.au/link-list": "^3.0.5",
+    "@gov.au/main-nav": "^1.0.5",
+    "@gov.au/page-alerts": "^2.1.2",
+    "@gov.au/progress-indicator": "^3.1.6",
+    "@gov.au/responsive-media": "^2.0.13",
+    "@gov.au/select": "^2.0.10",
+    "@gov.au/side-nav": "^5.0.7",
+    "@gov.au/skip-link": "^2.0.15",
+    "@gov.au/tags": "^3.1.6",
+    "@gov.au/text-inputs": "^2.1.0",
+    "autoprefixer": "^9.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.2",
+    "vue": "^2.0.1"
+  },
+  "devDependencies": {
+    "@vue/devtools": "^4.1.5",
+    "babel-core": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-runtime": "^6.0.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.1.0",
+    "browserify-hmr": "^0.3.1",
+    "cross-env": "^2.0.0",
+    "envify": "^3.4.1",
+    "eslint": "^3.3.0",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-html": "^1.5.2",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "http-server": "^0.11.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.2.0",
+    "karma-browserify": "^5.1.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "npm-run-all": "^2.3.0",
+    "phantomjs-prebuilt": "^2.1.3",
+    "proxyquireify": "^3.0.1",
+    "uglify-js": "^2.5.0",
+    "vueify": "^9.0.0",
+    "watchify": "^3.4.0"
+  },
+  "pancake": {
+    "auto-save": true,
+    "plugins": true,
+    "ignore": [],
+    "json": {
+      "enable": false,
+      "location": "pancake/",
+      "name": "pancake",
+      "content": {
+        "name": true,
+        "version": true,
+        "dependencies": true,
+        "path": true,
+        "settings": true
+      }
+    },
+    "css": {
+      "minified": true,
+      "modules": false,
+      "browsers": [
+        "last 2 versions",
+        "ie 8",
+        "ie 9",
+        "ie 10"
+      ],
+      "location": "pancake/css/",
+      "name": "pancake.min.css"
+    },
+    "sass": {
+      "modules": false,
+      "location": "pancake/sass/",
+      "name": "pancake.scss"
+    },
+    "js": {
+      "minified": true,
+      "modules": false,
+      "location": "pancake/js/",
+      "name": "pancake.min.js"
+    },
+    "react": {
+      "location": "pancake/react/"
+    }
+  }
+}
