@@ -16,15 +16,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Australian Government Design System | Home</title>
+	<title> NSW Government | Savings Finder</title>
 
+  
 	<script type="text/javascript">
 		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
 	</script>
 
-	<link rel="icon" href="assets/favicons/favicon.ico">
+  <!-- Favicon -->
+  <link rel="icon" href="./docs/assets/favicons/Waratah-favicon.ico">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="docs/css/main.css">
   <link rel="stylesheet" href="dist/build.css">
+  <link rel="stylesheet" href="docs/css/additional.css">
 
 	<!-- These are shivs to help modern html work in older internet explorer browsers -->
 	<!--[if lt IE 9]>
@@ -51,23 +56,24 @@
 	</nav>
 
 	<!-- HEADER -->
-	<header class="au-header au-header--dark" role="banner">
+	<header class="au-header au-header--light" role="banner">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<a class="au-header__brand" href="#">
-						<img class="au-header__brand-image" alt="Insert alternate text here" src="assets/img/header-logo-nsw-white.png">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="./docs/assets/img/header-logo-nsw-colour.png">
 						<div class="au-header__text">
-						<h2 class="au-header__heading">Name of website</h2>
-						<div class="au-header__subline">Simple explanation of the website</div>
+						<h2 class="au-header__heading">Savings Finder</h2>
+						<div class="au-header__subline">This page can help you find ways you can save!</div>
 						</div>
 					</a>
-				</div>
-			</div>
-		</div>
+				</div><!-- end col -->
+			</div><!-- row -->
+		</div><!-- container -->
 	</header>
 
-	<!-- MAIN NAVIGATION -->
+	<!-- 	
+	MAIN NAVIGATION
 	<nav class="au-main-nav au-main-nav--dark" id="#mainmenu" aria-label="main navigation">
 		<div class="container-fluid">
 			<div class="row">
@@ -104,27 +110,62 @@
 			</div>
 		</div>
 	</nav>
+-->
 
 	<!-- MAIN BODY -->
 	<main id="content">
 		<!--CONTENT-->
-		<div class="au-body au-body--alt">
+		<div class="au-body">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-sm-push-6">
-						<img class="au-responsive-media-img banner__image" src="assets/img/600x260.jpg" alt="Placeholder image 600x260">
-					</div>
-					<div class="col-xs-12 col-sm-6 col-sm-pull-6">
-						<h2>Hero callout</h2>
-						<p>Support the callout with some short explanatory text. You don't need more than a couple of sentences.</p>
-						<p>Use buttons to give your user a clear call to action about what to do next.</p>
-						<div class="btn-cta-group">
-							<a class="au-btn" href="#">Primary call to action</a>
+					<div class="col-xs-12 col-sm-6">
+						<h2>Tell us about you</h2>
+
+						<!-- radio buttons -->
+						<div class="form-group form-radio">
+							<input class="form-control form-control-lg" type="text" placeholder="Question 1 goes here Venison capicola bresaola jowl buffalo pork belly?">
+								<input class="form-check-input radio" type="radio" name="" id="exampleRadios1" value="option1">
+								<input class="form-check-input radio" type="radio" name="" id="exampleRadios1" value="option2">
+								<label class="au-control-input">
+										<input class="au-control-input__input" type="radio" name="radio-ex">
+										<span class="au-control-input__text">Phone</span>
+									  </label>
+									  <label class="au-control-input">
+										<input class="au-control-input__input" type="radio" name="radio-ex" checked>
+										<span class="au-control-input__text">Tablet</span>
+									  </label>
+						
+							</div><!-- form check -->
+
+						<div class="form-group form-radio">
+								<input class="form-control form-control-lg" type="text" placeholder="Question 1 goes here Venison capicola bresaola jowl buffalo pork belly?">
+									<input class="form-check-input" type="radio" name="" id="exampleRadios1" value="option1">
+									<input class="form-check-input" type="radio" name="" id="exampleRadios1" value="option2">
+						</div><!-- form check -->
+
+						<!-- input fields -->
+						<div class="form-group">
+								<label class="form-label" for="exampleInputEmail">Please enter your email address</label>
+								<input type="email" class="form-control form-control-email" type="text" placeholder="Email address" aria-describedby="emailHelp">
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
+						<!-- text area -->
+						<div class="form-group">
+								<label class="form-label text-area" for="exampleFormControlTextarea1">Do you have any other comments?</label>
+								<textarea class=".au-text-input--block" id="exampleFormControlTextarea1" rows="3"></textarea>
+							  </div>
+				
+						 <!-- Vue JS here -->	
+						  <div id="app"></div>
+
+						<div class="btn-cta-group">
+							<a class="au-btn" href="#">Submit</a>
+						</div>
+					</div><!-- end col -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</div><!-- au-body -->
+		<!-- 
 		<section class="au-body">
 			<div class="container-fluid">
 				<div class="row">
@@ -160,6 +201,8 @@
 				</div>
 			</div>
 		</section>
+
+
 		<section class="au-body">
 			<div class="container-fluid">
 				<div class="row">
@@ -175,16 +218,7 @@
 			</div>
     </section>
 
-    <section class="au-body">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div id="app"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-		<!--END CONTENT-->
+    <!--END CONTENT-->
 	</main>
 	<!-- END MAIN BODY -->
 
@@ -199,12 +233,14 @@
 						<li><a href="#">Accessibility</a></li>
 					</ul>
 				</nav>
-			</div>
+			</div><!-- row -->
+		<div><!-- container -->
 	</footer>
 
 	<!-- The javascript from pancake to open and close side nav on desktop -->
   <script src="docs/js/script.min.js"></script>
   <script src="dist/build.js"></script>
+
 </body>
 
 </html>
