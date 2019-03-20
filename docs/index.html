@@ -9,7 +9,7 @@
 	<html class="no-js ie9" lang="en">
 <![endif]-->
 <!--[if !(IE)]><!-->
-	<html class="no-js" lang="en">
+<html class="no-js" lang="en">
 <!--<![endif]-->
 
 <head>
@@ -19,7 +19,13 @@
 	<title>Australian Government Design System | Home</title>
 
 	<script type="text/javascript">
-		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
+		var $html = document.documentElement;
+		if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js");
+		else {
+			var className = "no-js";
+			$html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"),
+				" "), $html.className += " js"
+		}
 	</script>
 
 	<link rel="icon" href="assets/favicons/favicon.ico">
@@ -41,6 +47,7 @@
 
 <!-- BODY -->
 <!-- GRID-12 -->
+
 <body class="au-grid">
 
 	<!-- SKIP-LINKS -->
@@ -57,8 +64,8 @@
 					<a class="au-header__brand" href="#">
 						<img class="au-header__brand-image" alt="Insert alternate text here" src="assets/img/header-logo-nsw-white.png">
 						<div class="au-header__text">
-						<h2 class="au-header__heading">Name of website</h2>
-						<div class="au-header__subline">Simple explanation of the website</div>
+							<h2 class="au-header__heading">Name of website</h2>
+							<div class="au-header__subline">Simple explanation of the website</div>
 						</div>
 					</a>
 				</div>
@@ -69,22 +76,16 @@
 	<!-- MAIN NAVIGATION -->
 	<nav class="au-main-nav au-main-nav--dark" id="#mainmenu" aria-label="main navigation">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row stinky">
 				<div class="col-md-12">
 					<div class="au-main-nav__content" id="main-nav-default-dark">
-						<button
-							aria-controls="main-nav-default-dark"
-							class="au-main-nav__toggle au-main-nav__toggle--open"
-							onClick="return AU.mainNav.Toggle( this )">
+						<button aria-controls="main-nav-default-dark" class="au-main-nav__toggle au-main-nav__toggle--open" onClick="return AU.mainNav.Toggle( this )">
 							Menu
 						</button>
 						<div class="au-main-nav__menu">
 							<div class="au-main-nav__menu-inner">
 								<div class="au-main-nav__focus-trap-top"></div>
-								<button
-									aria-controls="main-nav-default-dark"
-									class="au-main-nav__toggle au-main-nav__toggle--close"
-									onClick="return AU.mainNav.Toggle( this )">
+								<button aria-controls="main-nav-default-dark" class="au-main-nav__toggle au-main-nav__toggle--close" onClick="return AU.mainNav.Toggle( this )">
 									Close
 								</button>
 								<ul class="au-link-list">
@@ -129,11 +130,15 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2>Some highlighted content</h2>
-						<p>Explain some important information upfront, what is the product or service. What is the role of it. How does the user get started using it. Keep this text simple and informative. Vestibulum non consequat tellus.</p>
+						<p>Explain some important information upfront, what is the product or service. What is the role of it. How does
+							the user get started using it. Keep this text simple and informative. Vestibulum non consequat tellus.</p>
 
 						<p>Nullam sollicitudin orci neque, ut condimentum ipsum blandit eu. Praesent eu sagittis elit.</p>
 
-						<p>Nullam ut nibh sed nunc molestie faucibus. Integer pulvinar sapien in porta fringilla. Cras et velit fermentum, pretium lacus gravida, egestas mauris. Explain some important information upfront, what is the product or service. What is the role of it. How does the user get started using it. Keep this text simple and informative.</p>
+						<p>Nullam ut nibh sed nunc molestie faucibus. Integer pulvinar sapien in porta fringilla. Cras et velit
+							fermentum, pretium lacus gravida, egestas mauris. Explain some important information upfront, what is the
+							product or service. What is the role of it. How does the user get started using it. Keep this text simple and
+							informative.</p>
 					</div>
 				</div>
 			</div>
@@ -142,7 +147,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-4">
-							<img class="au-responsive-media-img banner__image" src="assets/img/100x100.jpg" alt="Placeholder image 100x100">
+						<img class="au-responsive-media-img banner__image" src="assets/img/100x100.jpg" alt="Placeholder image 100x100">
 						<h3>Small highlight</h3>
 						<p>A small explanation of the featured item this may include a link or a call to action.</p>
 					</div>
@@ -164,7 +169,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2>Sub content</h2>
-						<p>Content that is important to have on the home page but not so important that it has to be visible at the top of the page. This could include contact information, more detailed explanation of the functionality of a product or service.</p>
+						<p>Content that is important to have on the home page but not so important that it has to be visible at the top
+							of the page. This could include contact information, more detailed explanation of the functionality of a product
+							or service.</p>
 						<div class="btn-cta-group">
 							<a class="au-btn" href="#">Primary call to action</a>
 							<a class="au-btn au-btn--secondary" href="#">Secondary call to action</a>
