@@ -11,59 +11,41 @@
 
 
 
- /* 
+/* 
   * Typography
   */
 
-  h2 {
-      font-family: 'Gotham', 'Arial', sans-serif;
-  }
-
- 
- /*
-  * Global
-  */ 
-
-  body {
-      font-family: 'Gotham', 'Arial', sans-serif;
-      color: black;
-  }
-
-  .au-body {
-      background: #f4f7f9;
-  }
-
-  h2.au-header__heading {
-      font-weight: 600;
-  }
-
-  /*
-   * Forms 
-   */
-
-  .form-control-lg  {
-      border: none;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      height: 2rem;
-      margin: 2rem 0 2rem 0;
-      padding: 0.5rem;
-      width: 80%;
-  } 
-
-
-  .form-control-email  {
-    border: none;
-    font-size: 0.8rem;
-    height: 2rem;
-    padding: 0.5rem;
-    width: 45%;
-} 
-
-.form-label {
-    font-size: 0.8rem;
+h2 {
+    font-family: 'Gotham', 'Arial', sans-serif;
 }
 
-.form-label.text-area {
+
+/*
+  * Global
+  */
+
+body {
+    font-family: 'Gotham', 'Arial', sans-serif;
+    color: black;
+}
+
+.au-body {
+    background: #f4f7f9;
+}
+
+h2.au-header__heading {
+    font-weight: 600;
+}
+
+/*
+ * Forms 
+ */
+
+.form-spacing {
+    margin-bottom: 3rem;
     margin-top: 3rem;
+}
+
+.au-control-input {
+    margin-top: 1rem;
 }
