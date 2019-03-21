@@ -9,7 +9,7 @@
 	<html class="no-js ie9" lang="en">
 <![endif]-->
 <!--[if !(IE)]><!-->
-	<html class="no-js" lang="en">
+<html class="no-js" lang="en">
 <!--<![endif]-->
 
 <head>
@@ -18,18 +18,24 @@
 
 	<title> NSW Government | Savings Finder</title>
 
-  
+
 	<script type="text/javascript">
-		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
+		var $html = document.documentElement;
+		if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js");
+		else {
+			var className = "no-js";
+			$html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)",
+				"gi"), " "), $html.className += " js"
+		}
 	</script>
 
-  <!-- Favicon -->
-  <link rel="icon" href="./docs/assets/favicons/Waratah-favicon.ico">
+	<!-- Favicon -->
+	<link rel="icon" href="./docs/assets/favicons/Waratah-favicon.ico">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="docs/css/main.css">
-  <link rel="stylesheet" href="dist/build.css">
-  <link rel="stylesheet" href="docs/css/additional.css">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="docs/css/main.css">
+	<link rel="stylesheet" href="dist/build.css">
+	<link rel="stylesheet" href="docs/css/additional.css">
 
 	<!-- These are shivs to help modern html work in older internet explorer browsers -->
 	<!--[if lt IE 9]>
@@ -47,6 +53,7 @@
 
 <!-- BODY -->
 <!-- GRID-12 -->
+
 <body class="au-grid">
 
 	<!-- SKIP-LINKS -->
@@ -61,10 +68,11 @@
 			<div class="row">
 				<div class="col-md-12">
 					<a class="au-header__brand" href="#">
-						<img class="au-header__brand-image" alt="Insert alternate text here" src="./docs/assets/img/header-logo-nsw-colour.png">
+						<img class="au-header__brand-image" alt="Insert alternate text here"
+							src="./docs/assets/img/header-logo-nsw-colour.png">
 						<div class="au-header__text">
-						<h2 class="au-header__heading">Savings Finder</h2>
-						<div class="au-header__subline">This page can help you find ways you can save!</div>
+							<h2 class="au-header__heading">Savings Finder</h2>
+							<div class="au-header__subline">This page can help you find ways you can save!</div>
 						</div>
 					</a>
 				</div><!-- end col -->
@@ -123,40 +131,96 @@
 
 						<!-- radio buttons -->
 						<div class="form-group form-radio">
-							<input class="form-control form-control-lg" type="text" placeholder="Question 1 goes here Venison capicola bresaola jowl buffalo pork belly?">
-								<input class="form-check-input radio" type="radio" name="" id="exampleRadios1" value="option1">
-								<input class="form-check-input radio" type="radio" name="" id="exampleRadios1" value="option2">
-								<label class="au-control-input">
+							<div class="row">
+								<div class="col-12 form-spacing">
+									<span>Question 1 goes here with some words and then I keep typing and typing?</span>
+									<br>
+									<label class="au-control-input au-control-input--small">
 										<input class="au-control-input__input" type="radio" name="radio-ex">
-										<span class="au-control-input__text">Phone</span>
-									  </label>
-									  <label class="au-control-input">
-										<input class="au-control-input__input" type="radio" name="radio-ex" checked>
-										<span class="au-control-input__text">Tablet</span>
-									  </label>
-						
-							</div><!-- form check -->
+										<span class="au-control-input__text">Yes</span>
+									</label>
+									<label class="au-control-input au-control-input--small">
+										<input class="au-control-input__input" type="radio" name="radio-ex">
+										<span class="au-control-input__text">No</span>
+									</label>
+									<div class="form-spacing">
+										<span>Question 2 goes here with some words and then I keep typing and
+											typing?</span>
+										<br>
+										<label class="au-control-input au-control-input--small">
+											<input class="au-control-input__input" type="radio" name="radio-ex">
+											<span class="au-control-input__text">Yes</span>
+										</label>
+										<label class="au-control-input au-control-input--small">
+											<input class="au-control-input__input" type="radio" name="radio-ex">
+											<span class="au-control-input__text">No</span>
+										</label>
+									</div><!-- end question -->
+
+									<div class="form-spacing">
+										<span>Question 3 goes here with some words and then I keep typing and
+											typing please enter your email address?</span>
+										<br>
+										<label class="au-control-input au-control-input--small">
+											<input class="au-control-input__input" type="radio" name="radio-ex" checked>
+											<span class="au-control-input__text">Yes</span>
+										</label>
+										<label class="au-control-input au-control-input--small">
+											<input class="au-control-input__input" type="radio" name="radio-ex" checked>
+											<span class="au-control-input__text">No</span>
+										</label>
+									</div><!-- end question -->
+
+								</div><!-- end col -->
+							</div><!-- row -->
+						</div><!-- form check -->
 
 						<div class="form-group form-radio">
-								<input class="form-control form-control-lg" type="text" placeholder="Question 1 goes here Venison capicola bresaola jowl buffalo pork belly?">
-									<input class="form-check-input" type="radio" name="" id="exampleRadios1" value="option1">
-									<input class="form-check-input" type="radio" name="" id="exampleRadios1" value="option2">
+							<input class="form-control form-control-lg" type="text"
+								placeholder="Question 1 goes here Venison capicola bresaola jowl buffalo pork belly?">
+							<input class="form-check-input" type="radio" name="" id="exampleRadios1" value="option1">
+							<input class="form-check-input" type="radio" name="" id="exampleRadios1" value="option2">
 						</div><!-- form check -->
 
 						<!-- input fields -->
 						<div class="form-group">
-								<label class="form-label" for="exampleInputEmail">Please enter your email address</label>
-								<input type="email" class="form-control form-control-email" type="text" placeholder="Email address" aria-describedby="emailHelp">
+							<label class="form-label" for="exampleInputEmail">Please enter your email
+								address</label>
+							<input type="email" class="form-control form-control-email" type="text"
+								placeholder="Email address" aria-describedby="emailHelp">
 						</div>
+
+						<br>
+						<br>
 
 						<!-- text area -->
 						<div class="form-group">
-								<label class="form-label text-area" for="exampleFormControlTextarea1">Do you have any other comments?</label>
-								<textarea class=".au-text-input--block" id="exampleFormControlTextarea1" rows="3"></textarea>
-							  </div>
-				
-						 <!-- Vue JS here -->	
-						  <div id="app"></div>
+							<label for="textarea">Comments go here</label>
+							<textarea class="au-text-input au-text-input--block" name="textarea" id="textarea">
+							</textarea>
+						</div><!-- form-group -->
+
+						<br>
+						<br>
+
+						<!-- Date picker Dropdown -->
+						<label for="select1">When is your birthday?</label>
+						<select id="select1" class="au-select">
+							<option value="">Day</option>
+							<option value="">{{ Day }}</option>
+						</select>
+						<select id="select1" class="au-select">
+							<option value="">Month</option>
+							<option value="">{{ Month }}</option>
+						</select>
+						<select id="select1" class="au-select">
+							<option value="">Year</option>
+							<option value="">{{ Year }}</option>
+						</select>
+
+
+						<!-- Vue JS here -->
+						<div id="app"></div>
 
 						<div class="btn-cta-group">
 							<a class="au-btn" href="#">Submit</a>
@@ -234,12 +298,13 @@
 					</ul>
 				</nav>
 			</div><!-- row -->
-		<div><!-- container -->
+			<div>
+				<!-- container -->
 	</footer>
 
 	<!-- The javascript from pancake to open and close side nav on desktop -->
-  <script src="docs/js/script.min.js"></script>
-  <script src="dist/build.js"></script>
+	<script src="docs/js/script.min.js"></script>
+	<script src="dist/build.js"></script>
 
 </body>
 
