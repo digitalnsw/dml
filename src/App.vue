@@ -1,100 +1,103 @@
 <template>
   <div id="app">
+    <radioButtons></radioButtons>
     <user-form v-on:formSubmit="translateText"></user-form>
     <result v-text="translatedText"></result>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import userForm from './components/userForm.vue'
-import Result from './components/Result.vue'
+import axios from "axios";
+import radioButtons from "./components/radioButtons.vue";
+import userForm from "./components/userForm.vue";
+import Result from "./components/Result.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
+    radioButtons,
     userForm,
     Result
   },
-  data () {
+  data() {
     return {
-      translatedText: '',
+      translatedText: "",
       dataToSend: {
-        "persons":{
-          "parent1":{
-            "is_guardian":{
-              "2019-03":true
+        persons: {
+          parent1: {
+            is_guardian: {
+              "2019-03": true
             },
-            "active_kids__is_eligible":{
-              "2019-03":null
+            active_kids__is_eligible: {
+              "2019-03": null
             },
-            "creative_kids__is_eligible":{
-              "2019-03":null
+            creative_kids__is_eligible: {
+              "2019-03": null
             }
           },
-          "child1":{
-            "is_nsw_resident":{
-              "2019-03":true
+          child1: {
+            is_nsw_resident: {
+              "2019-03": true
             },
-            "is_enrolled_in_school":{
-              "2019-03":true
+            is_enrolled_in_school: {
+              "2019-03": true
             },
-            "birth":{
-              "ETERNITY":"2013-03-18"
+            birth: {
+              ETERNITY: "2013-03-18"
             },
-            "age":{
-              "2019-03":null
+            age: {
+              "2019-03": null
             },
-            "active_kids__child_meets_criteria":{
-              "2019-03":null
+            active_kids__child_meets_criteria: {
+              "2019-03": null
             },
-            "creative_kids__child_meets_criteria":{
-              "2019-03":null
+            creative_kids__child_meets_criteria: {
+              "2019-03": null
             },
-            "active_kids__voucher_amount":{
-              "2019-03":null
+            active_kids__voucher_amount: {
+              "2019-03": null
             },
-            "creative_kids__voucher_amount":{
-              "2019-03":null
+            creative_kids__voucher_amount: {
+              "2019-03": null
             },
-            "has_valid_medicare_card":{
-              "2019-03":true
+            has_valid_medicare_card: {
+              "2019-03": true
             },
-            "active_kids__already_issued_in_calendar_year":{
-              "2019":false
+            active_kids__already_issued_in_calendar_year: {
+              "2019": false
             },
-            "creative_kids__already_issued_in_calendar_year":{
-              "2009":false
+            creative_kids__already_issued_in_calendar_year: {
+              "2009": false
             }
           }
         },
-        "families":{
-          "family1":{
-            "parents":[
-              "parent1"
-            ],
-            "children":[
-              "child1"
-            ]
+        families: {
+          family1: {
+            parents: ["parent1"],
+            children: ["child1"]
           }
         }
       }
-    }
+    };
   },
   methods: {
     translateText(text) {
-      console.log(text)
-      this.dataToSend.persons.child1.birth.ETERNITY = text
+      console.log(text);
+      this.dataToSend.persons.child1.birth.ETERNITY = text;
 
-      axios.post('https://openfisca-nsw-staging.herokuapp.com/calculate', this.dataToSend )
-      .then((response) => {
-        console.log(response)
-        this.translatedText = text
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+      axios
+        .post(
+          "https://openfisca-nsw-staging.herokuapp.com/calculate",
+          this.dataToSend
+        )
+        .then(response => {
+          console.log(response);
+          this.translatedText = text;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
-}
+};
 </script>

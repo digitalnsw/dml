@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       textToTranslate: '',
       months: [
@@ -43,28 +43,36 @@ export default {
   },
   methods: {
     formSubmit() {
-      let textToTranslate = this.year + '/' + this.month + '/' + this.day
+      let textToTranslate = this.year + "/" + this.month + "/" + this.day
       textToTranslate = new Date(textToTranslate)
-      let formatted_date = textToTranslate.getFullYear() + "-" + (textToTranslate.getMonth() + 1) + "-" + textToTranslate.getDate()
+      let formatted_date =
+        textToTranslate.getFullYear() +
+        "-" +
+        (textToTranslate.getMonth() + 1) +
+        "-" +
+        textToTranslate.getDate()
       console.log(formatted_date)
-      this.$emit('formSubmit', formatted_date)
+      this.$emit("formSubmit", formatted_date)
     }
   },
   computed: {
-    years () {
+    years() {
       const year = new Date().getFullYear()
-      return Array.from({length: year - 1900}, (value, index) => 1901 + index)
+      return Array.from(
+        { length: year - 1900 },
+        (value, index) => 1901 + index
+      )
     },
-    days () {
-        let daysWithZero = []
-        for(var i=1; i <= 31; i++) {
-          if(i<10) {
-            daysWithZero.push('0'+ i)
-          } else {
-            daysWithZero.push(i)
-          }
+    days() {
+      let daysWithZero = []
+      for (var i = 1; i <= 31; i++) {
+        if (i < 10) {
+          daysWithZero.push("0" + i)
+        } else {
+          daysWithZero.push(i)
         }
-        return daysWithZero
+      }
+      return daysWithZero;
     }
   }
 }
@@ -72,7 +80,7 @@ export default {
 
 <style scoped>
 #hello {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -80,7 +88,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: bold;
 }
 
