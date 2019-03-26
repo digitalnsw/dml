@@ -1,21 +1,27 @@
 <template>
   <div id="user-form">
     <form v-on:submit.prevent="formSubmit">
-      <!-- Date picker Dropdown -->
-      <label for="day">When is your birthday?</label>
-      <select id="day" v-model="day" class="au-select">
-        <option value="">Day</option>
-        <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
-      </select>
-      <select id="month" v-model="month" class="au-select">
-        <option value="">Month</option>
-        <option v-for="(month, index) in months" :key="index" :value="index+1">{{ month }}</option>
-      </select>
-      <select id="year" v-model="year" class="au-select">
-        <option value="">Year</option>
-        <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-      </select>
-      <input class="au-btn" type="submit" value="Send Request">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group form-spacing">
+            <!-- Date picker Dropdown -->
+            <label for="day">When is your birthday?</label>
+            <select id="day" v-model="day" class="au-select">
+              <option disabled value="">Day</option>
+              <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
+            </select>
+            <select id="month" v-model="month" class="au-select">
+              <option disabled value="">Month</option>
+              <option v-for="(month, index) in months" :key="index" :value="index+1">{{ month }}</option>
+            </select>
+            <select id="year" v-model="year" class="au-select">
+              <option disabled value="">Year</option>
+              <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+            </select>
+            <input class="au-btn" type="submit" value="Send Request">
+          </div><!-- form group -->
+        </div> <!-- end col -->
+      </div><!-- row -->
     </form>
   </div>
 </template>
@@ -24,6 +30,9 @@
 export default {
   data() {
     return {
+      day: '',
+      month: '',
+      year: '',
       textToTranslate: '',
       months: [
         "January",
@@ -43,16 +52,14 @@ export default {
   },
   methods: {
     formSubmit() {
-      let textToTranslate = this.year + "/" + this.month + "/" + this.day
+      let textToTranslate = this.year + '/' + this.month + '/' + this.day
       textToTranslate = new Date(textToTranslate)
       let formatted_date =
-        textToTranslate.getFullYear() +
-        "-" +
-        (textToTranslate.getMonth() + 1) +
-        "-" +
-        textToTranslate.getDate()
+          textToTranslate.getFullYear() + '-'
+          + ('0' + (textToTranslate.getMonth()+1)).slice(-2) + '-'
+          + ('0' + textToTranslate.getDate()).slice(-2)
       console.log(formatted_date)
-      this.$emit("formSubmit", formatted_date)
+      this.$emit('formSubmit', formatted_date)
     }
   },
   computed: {

@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <radioButtons></radioButtons>
-    <user-form v-on:formSubmit="translateText"></user-form>
-    <result v-text="translatedText"></result>
+    <div class="container">
+      <radioButtons></radioButtons>
+      <user-form v-on:formSubmit="translateText"></user-form>
+      <result v-text="translatedText"></result>
+    </div>
   </div>
 </template>
 
@@ -25,17 +27,20 @@ export default {
       dataToSend: {
         persons: {
           parent1: {
-            is_guardian: {
-              "2019-03": true
-            },
-            active_kids__is_eligible: {
-              "2019-03": null
-            },
-            creative_kids__is_eligible: {
-              "2019-03": null
-            }
-          },
-          child1: {
+          }
+        },
+        families: {
+          family1: {
+            parents: ["parent1"]
+          }
+        }
+      }
+    };
+  },
+  methods: {
+    translateText(text) {
+
+      let child = {
             is_nsw_resident: {
               "2019-03": true
             },
@@ -43,10 +48,13 @@ export default {
               "2019-03": true
             },
             birth: {
-              ETERNITY: "2013-03-18"
+              ETERNITY: ""
             },
             age: {
               "2019-03": null
+            },
+            has_valid_medicare_card: {
+              "2019-03": true
             },
             active_kids__child_meets_criteria: {
               "2019-03": null
@@ -59,30 +67,14 @@ export default {
             },
             creative_kids__voucher_amount: {
               "2019-03": null
-            },
-            has_valid_medicare_card: {
-              "2019-03": true
-            },
-            active_kids__already_issued_in_calendar_year: {
-              "2019": false
-            },
-            creative_kids__already_issued_in_calendar_year: {
-              "2009": false
             }
           }
-        },
-        families: {
-          family1: {
-            parents: ["parent1"],
-            children: ["child1"]
-          }
-        }
-      }
-    };
-  },
-  methods: {
-    translateText(text) {
-      console.log(text);
+
+
+      this.dataToSend.persons.child1 = child
+
+      this.dataToSend.families.family1.children = ['child1']
+
       this.dataToSend.persons.child1.birth.ETERNITY = text;
 
       axios
