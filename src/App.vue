@@ -35,7 +35,7 @@ export default {
           }
         }
       }
-    };
+    }
   },
   methods: {
     translateText(text) {
@@ -75,7 +75,7 @@ export default {
 
       this.dataToSend.families.family1.children = ['child1']
 
-      this.dataToSend.persons.child1.birth.ETERNITY = text;
+      this.dataToSend.persons.child1.birth.ETERNITY = text
 
       axios
         .post(
@@ -83,13 +83,13 @@ export default {
           this.dataToSend
         )
         .then(response => {
-          console.log(response);
-          this.translatedText = text;
+          console.log(response)
+          this.translatedText = text
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     }
   }
-};
+}
 </script>
