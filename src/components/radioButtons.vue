@@ -1,7 +1,7 @@
 <template>
   <div id="radioButtons">
     <div class="row">
-      <div class="col-12">
+      <div class="col-md-12">
         <div v-for="question in questions" :key="question" class="form-group form-radio form-spacing">
           <span>{{ question }}</span>
           <br>

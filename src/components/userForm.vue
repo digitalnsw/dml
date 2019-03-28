@@ -1,33 +1,39 @@
 <template>
   <div id="user-form">
-    <form v-on:submit.prevent="formSubmit">
-      <div class="row">
-        <div class="col-12">
-          <div class="form-group form-spacing">
-            <!-- Date picker Dropdown -->
-            <label for="day">When is your birthday?</label>
-            <select id="day" v-model="day" class="au-select">
-              <option disabled value="">Day</option>
-              <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
-            </select>
-            <select id="month" v-model="month" class="au-select">
-              <option disabled value="">Month</option>
-              <option v-for="(month, index) in months" :key="index" :value="index+1">{{ month }}</option>
-            </select>
-            <select id="year" v-model="year" class="au-select">
-              <option disabled value="">Year</option>
-              <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-            </select>
-            <input class="au-btn" type="submit" value="Send Request">
-          </div><!-- form group -->
-        </div> <!-- end col -->
-      </div><!-- row -->
-    </form>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group form-spacing">
+          <!-- Date picker Dropdown -->
+          <label for="day">When is your birthday?</label>
+          <select id="day" v-model="day" class="au-select">
+            <option disabled value="">Day</option>
+            <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
+          </select>
+          <select id="month" v-model="month" class="au-select">
+            <option disabled value="">Month</option>
+            <option v-for="(month, index) in months" :key="index" :value="index+1">{{ month }}</option>
+          </select>
+          <select id="year" v-model="year" class="au-select">
+            <option disabled value="">Year</option>
+            <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+          </select>
+        </div><!-- form group -->
+      </div> <!-- end col -->
+    </div><!-- row -->
   </div>
 </template>
 
 <script>
 export default {
+  destroyed(){
+    let textToTranslate = this.year + '/' + this.month + '/' + this.day
+      textToTranslate = new Date(textToTranslate)
+      let formatted_date =
+          textToTranslate.getFullYear() + '-'
+          + ('0' + (textToTranslate.getMonth()+1)).slice(-2) + '-'
+          + ('0' + textToTranslate.getDate()).slice(-2)
+      this.$emit('updateDateOfBirth', formatted_date)
+  },
   data() {
     return {
       day: '',
@@ -48,18 +54,6 @@ export default {
         "November",
         "December"
       ]
-    }
-  },
-  methods: {
-    formSubmit() {
-      let textToTranslate = this.year + '/' + this.month + '/' + this.day
-      textToTranslate = new Date(textToTranslate)
-      let formatted_date =
-          textToTranslate.getFullYear() + '-'
-          + ('0' + (textToTranslate.getMonth()+1)).slice(-2) + '-'
-          + ('0' + textToTranslate.getDate()).slice(-2)
-      console.log(formatted_date)
-      this.$emit('formSubmit', formatted_date)
     }
   },
   computed: {
