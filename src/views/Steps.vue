@@ -1,6 +1,6 @@
 <template>
   <div id="steps">
-    <form @submit.prevent="formSend">
+    <form @submit.prevent="formSend" id="rebatesForm">
       <div v-if="step === 1">
         <user-form v-on:updateDateOfBirth="translateText"></user-form>
       </div>
@@ -49,11 +49,6 @@ export default {
     radioButtons,
     userForm,
     Result
-  },
-  props: {
-    day: '',
-    month: '',
-    year: ''
   },
   methods:{
     prev() {
