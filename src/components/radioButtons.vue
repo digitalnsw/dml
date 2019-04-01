@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div v-for="(question_obj, index) in questions" :key="index" class="form-group form-radio form-spacing">
-          <span>{{ question_obj.question }} -<i> {{ question_obj.variable }} </i></span>
+          <span>{{ question_obj.text }} -<i> {{ question_obj.variable }} </i></span>
           <br>
           <label class="au-control-input au-control-input--small">
             <input class="au-control-input__input" type="radio" :name="'question-' + index" v-model="radio_data[questions[index].variable]" value="true" :checked="question_obj.variable == 'yes'">

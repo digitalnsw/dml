@@ -8,7 +8,7 @@
         <radioButtons></radioButtons>
       </div>
       <div v-else>
-        <result v-bind:dataRecived="dataRecived"></result>
+        <result v-bind:dataReceived="dataReceived"></result>
         <button class="au-btn">Submit</button>
       </div>
       <div class="row">
@@ -42,7 +42,7 @@ export default {
           }
         }
       },
-      dataRecived: {},
+      dataReceived: {},
     }
   },
   components: {
@@ -103,7 +103,7 @@ export default {
         )
         .then(response => {
           console.log(response)
-          this.dataRecived = JSON.stringify(response.data, null, 4)
+          this.dataReceived = JSON.stringify(response.data, null, 4)
         })
         .catch(error => {
           console.log(error)
