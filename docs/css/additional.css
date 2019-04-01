@@ -55,3 +55,12 @@ h2.au-header__heading {
 .au-control-input {
     margin-top: 1rem;
 }
+
+/*
+ * Cards
+ */
+
+.card {
+    border: 1px solid #002664;
+    border-radius: 5px;
+} 
