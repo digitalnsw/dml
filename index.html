@@ -127,29 +127,33 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6">
-						<h2>Tell us about you</h2>
+						<h2 class="text-center">Let's get started!</h2>
+						<h3>Are you an Individual or a Household?</h3>
 
-						<!-- input fields -->
-						<div class="form-group">
-							<label class="form-label" for="exampleInputEmail">Please enter your email
-								address</label>
-							<input type="email" class="form-control form-control-email" type="text"
-								placeholder="Email address" aria-describedby="emailHelp">
-						</div>
+						<div id="radioButtons">
+							<div class="row">
+								<div class="col-md-12">
+									<br>
 
-						<br>
-						<br>
+											<div class="col-md-6">
+												<img class="icon" src="docs/assets/img/children.png" alt="Individual">
+													<label class="au-control-input au-control-input--small">
+														<input class="au-control-input__input" type="radio" :name="'question-' + index" v-model="radio_data[questions[index].variable]" value="true" :checked="question_obj.variable == 'yes'">
+														<span class="au-control-input__text">Individual</span>
+													</label>
+											</div><!-- end col -->
+		
+											<div class="col-md-6">
+												<img class="icon" src="docs/assets/img/teens.png" alt="Individual">
+													<label class="au-control-input au-control-input--small">
+														<input class="au-control-input__input" type="radio" :name="'question-' + index" v-model="radio_data[questions[index].variable]" value="true" :checked="question_obj.variable == 'yes'">
+														<span class="au-control-input__text">Household</span>
+													</label>
+											</div><!-- end col -->
 
-						<!-- text area -->
-						<div class="form-group">
-							<label for="textarea">Comments go here</label>
-							<textarea class="au-text-input au-text-input--block" name="textarea" id="textarea">
-							</textarea>
-						</div><!-- form-group -->
-
-						<br>
-						<br>
-
+									</div> <!-- end col -->
+								</div><!-- row -->
+							</div><!-- radio buttons -->
 
 						<!-- Vue JS here -->
 						<div id="app"></div>
