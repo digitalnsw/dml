@@ -1,13 +1,13 @@
 <template>
   <div id="result">
-    <pre>{{dataRecived}}</pre>
+    <pre>{{dataReceived}}</pre>
   </div>
 </template>
 
 <script>
 export default {
   name: 'result',
-  props: ['dataRecived']
+  props: ['dataReceived']
 }
 </script>
 
