@@ -31,10 +31,16 @@ body {
 
 .au-body {
     background: #f4f7f9;
+    text-align: center;
 }
 
 h2.au-header__heading {
     font-weight: 600;
+}
+
+.au-body img.icon {
+    height: 5rem;
+    padding: 2rem;
 }
 
 /*
