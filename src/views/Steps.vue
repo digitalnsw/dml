@@ -2,19 +2,22 @@
   <div id="steps">
     <form @submit.prevent="formSend" id="rebatesForm">
       <div v-if="step === 1">
-        <user-form v-on:updateDateOfBirth="translateText"></user-form>
+        <individualOrHousehold></individualOrHousehold>
       </div>
       <div v-else-if="step === 2">
+        <user-form v-on:updateDateOfBirth="translateText"></user-form>
+      </div>
+      <div v-else-if="step === 3">
         <radioButtons></radioButtons>
       </div>
-      <div v-else>
+      <div  v-else>
         <result v-bind:dataReceived="dataReceived"></result>
         <button class="au-btn">Submit</button>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <button class="au-btn" @click.prevent="prev">Previous</button>
-          <button class="au-btn" @click.prevent="next">Next</button>
+          <button class="au-btn au-btn--block col-md-2" @click.prevent="prev">Previous</button>
+          <button class="au-btn au-btn--block col-md-2 col-md-offset-7" @click.prevent="next">Next</button>
         </div>
       </div>
     </form>
@@ -23,6 +26,7 @@
 
 <script>
 import axios from "axios"
+import individualOrHousehold from "../components/individualOrHousehold.vue"
 import radioButtons from "../components/radioButtons.vue"
 import userForm from "../components/userForm.vue"
 import Result from "../components/Result.vue"
@@ -46,8 +50,9 @@ export default {
     }
   },
   components: {
-    radioButtons,
+    individualOrHousehold,
     userForm,
+    radioButtons,
     Result
   },
   methods:{
