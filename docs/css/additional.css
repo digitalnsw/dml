@@ -31,6 +31,7 @@ body {
 
 .au-body {
     background: #f4f7f9;
+    min-height: 540px;
     text-align: center;
 }
 
