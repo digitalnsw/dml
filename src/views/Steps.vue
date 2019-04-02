@@ -15,9 +15,9 @@
         <button class="au-btn bottom-btn">Submit</button>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10 col-md-offset-2">
           <button class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
-          <button class="au-btn au-btn--block col-md-2 col-md-offset-7 bottom-btn" @click.prevent="next">Next</button>
+          <button class="au-btn au-btn--block col-md-2 col-md-offset-5 bottom-btn" @click.prevent="next">Next</button>
         </div>
       </div>
     </form>
