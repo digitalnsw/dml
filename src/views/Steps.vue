@@ -16,7 +16,7 @@
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-2">
-          <button class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
+          <button v-if="step > 1" class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
           <button class="au-btn au-btn--block col-md-2 col-md-offset-5 bottom-btn" @click.prevent="next">Next</button>
         </div>
       </div>
