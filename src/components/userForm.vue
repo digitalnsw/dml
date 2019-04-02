@@ -3,8 +3,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group form-spacing">
-          <!-- Date picker Dropdown -->
-          <label for="day">When is your birthday?</label>
+
+          <!-- 
+           Date picker Dropdown
+          <label for="day">What is your birthdate?</label>
           <select id="day" v-model="day" class="au-select">
             <option disabled value="">Day</option>
             <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
@@ -16,7 +18,19 @@
           <select id="year" v-model="year" class="au-select">
             <option disabled value="">Year</option>
             <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-          </select>
+          </select> -->
+
+          <div class="col-md-12">
+            <label for="text-input au-text-input--block" value="day" style="width:3rem;">Please enter your birthdate</label>
+              <input class="au-text-input" id="day" placeholder="Day">
+            <label for="text-input" value="Month"></label>
+              <input class="au-text-input" placeholder="Month">
+            <label for="text-input" value="Year"></label>
+              <input class="au-text-input mb-5" placeholder="Year">
+              <br>
+              <br>
+              <br>
+            </div><!-- end col -->
         </div><!-- form group -->
       </div> <!-- end col -->
     </div><!-- row -->
