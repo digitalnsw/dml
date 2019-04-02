@@ -16,7 +16,7 @@
 
 										<div class="col-md-6">
 											<img class="icon" src="docs/assets/img/children.png" alt="Individual">
-												<label class="au-control-input au-control-input--small">
+												<label class="au-control-input au-control-input--small bottom-btn">
 													<input class="au-control-input__input" type="radio" value="true">
 													<span class="au-control-input__text">Individual</span>
 												</label>
@@ -24,7 +24,7 @@
 		
 										<div class="col-md-6">
 											<img class="icon" src="docs/assets/img/teens.png" alt="Individual">
-												<label class="au-control-input au-control-input--small">
+												<label class="au-control-input au-control-input--small margin bottom-btn">
 													<input class="au-control-input__input" type="radio" value="true">
 													<span class="au-control-input__text">Household</span>
 												</label>
