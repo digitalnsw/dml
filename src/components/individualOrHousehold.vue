@@ -13,7 +13,7 @@
 							<div class="row">
 									<br>
 										<div class="col-md-6">
-											<img class="icon" src="docs/assets/img/children.png" alt="Individual">
+											<img class="icon" src="docs/assets/img/individual.png" alt="Individual">
                       <div class="col-12">
 												<label class="au-control-input au-control-input--small bottom-btn">
 													<input class="au-control-input__input" type="radio" value="true">
