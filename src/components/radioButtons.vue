@@ -22,14 +22,8 @@
 <script>
 
 export default {
-  destroyed(){
-    var newArray = []
-    for(var i = 1; i < this.questions.length; i++) {
-      newArray.push(this.questions[i].variable)
-    }
-    //console.log(newArray)
-  },
   name: 'radioButtons',
+  props: ['rebatesList'],
   components: {
   },
   data () {
@@ -201,17 +195,11 @@ export default {
   text: 'Do you hold an existing NRMA membership?',
   answer: null,
   answers: {
-    false: ['is_act_resident', 'is_australian_citizen', 'is_permament_resident'],
+    false: ['is_act_resident', 'is_australian_citizen', 'is_permanent_resident'],
     true: []
   },
   visible: true,
 }],
-      requests: [
-        { request: 'NRMA Free2Go', variable: 'NRMA_free2go__is_eligible'},
-        { request: 'Family Energy Rebate', variable: 'family_energy_rebate__person_meets_retail_criteria'},
-        { request: 'Gas Rebate', variable: 'gas_rebate__person_meets_retail_criteria'},
-        { request: 'Free Will Preparation', variable: 'will_preparation_eligible_for_free_will_preparation'}
-      ]
     }
   },
   methods:{
@@ -247,7 +235,31 @@ export default {
       }
 
     }
-  }
+  },
+  destroyed() {
+    var newArray = []
+    for(var i = 1; i < this.questions.length; i++) {
+      newArray.push(this.questions[i].variable)
+    }
+    const arrayToObject = (array) =>
+      array.reduce((obj, item) => {
+        obj[item.variable] = { "2019-03": item.answer }
+        return obj
+      }, {})
+    const arrayToObject2 = (array) =>
+      array.reduce((obj, item) => {
+        obj[item.variable] = { "2019-03": null }
+        return obj
+      }, {})
+
+    const answersObject = arrayToObject(this.questions)
+    const rebatesObject = arrayToObject2(this.$props.rebatesList)
+
+    let merged = {...answersObject, ...rebatesObject}
+
+    this.$emit('updateAnswers', merged)
+
+  },
 
 }
 

@@ -22,10 +22,10 @@
 
           <div class="col-md-12">
             <label for="text-input au-text-input--block" value="day" style="width:3rem;">Please enter your birthdate</label>
-              <input class="au-text-input" id="day" placeholder="Day">
-            <label for="text-input" value="Month"></label>
+              <input class="au-text-input" id="day" v-model="day" placeholder="Day">
+            <label for="text-input"></label>
               <input class="au-text-input" placeholder="Month">
-            <label for="text-input" value="Year"></label>
+            <label for="text-input"></label>
               <input class="au-text-input mb-5" placeholder="Year">
               <br>
               <br>

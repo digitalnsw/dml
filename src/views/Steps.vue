@@ -8,10 +8,10 @@
         <user-form v-on:updateDateOfBirth="translateText"></user-form>
       </div>
       <div v-else-if="step === 3">
-        <radioButtons></radioButtons>
+        <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList"></radioButtons>
       </div>
       <div  v-else>
-        <result v-bind:dataReceived="dataReceived"></result>
+        <result :dataReceived="dataReceived" :rebatesList="rebatesList"></result>
         <button class="au-btn bottom-btn">Submit</button>
       </div>
       <div class="row">
@@ -46,6 +46,12 @@ export default {
           }
         }
       },
+      rebatesList: [
+        { rebateName: 'NRMA Free2Go', variable: 'NRMA_free2go__is_eligible'},
+        { rebateName: 'Family Energy Rebate', variable: 'family_energy_rebate__person_meets_retail_criteria'},
+        { rebateName: 'Gas Rebate', variable: 'gas_rebate__person_meets_retail_criteria'},
+        { rebateName: 'Free Will Preparation', variable: 'will_preparation_eligible_for_free_will_preparation'}
+      ],
       dataReceived: {},
     }
   },
@@ -94,11 +100,14 @@ export default {
             }
           }
 
-      this.dataToSend.persons.child1 = child
+      //this.dataToSend.persons.child1 = child
 
-      this.dataToSend.families.family1.children = ['child1']
+      //this.dataToSend.families.family1.children = ['child1']
 
-      this.dataToSend.persons.child1.birth.ETERNITY = formatted_date
+      //this.dataToSend.persons.child1.birth.ETERNITY = formatted_date
+    },
+    updateAnswers(merged) {
+      this.dataToSend.persons.parent1 = merged
     },
     formSend() {
       axios
