@@ -19,6 +19,9 @@ h2 {
     font-family: 'Gotham', 'Arial', sans-serif;
 }
 
+h2.au-header__heading {
+    font-weight: 600;
+}
 
 /*
   * Global
@@ -35,14 +38,22 @@ body {
     text-align: center;
 }
 
-h2.au-header__heading {
-    font-weight: 600;
-}
-
 .au-body img.icon {
     height: 5rem;
     padding: 2rem;
 }
+
+/* 
+ * Footer
+ */
+
+ .au-body.au-footer.au-footer--dark {
+     min-height: 117px;
+ }
+
+/*
+ * Buttons
+ */
 
 .bottom-btn {
     margin-bottom: 5rem;
