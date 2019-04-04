@@ -51,7 +51,7 @@ export default {
       rebatesList: [
         { rebateName: 'NRMA Free2Go', variable: 'NRMA_free2go__is_eligible', srcImage: 'docs/assets/img/NRMA_free2go__is_eligible.jpg'},
         { rebateName: 'Family Energy Rebate', variable: 'family_energy_rebate__person_meets_retail_criteria', srcImage:'docs/assets/img/family_energy_rebate__person_meets_retail_criteria.jpg'},
-        { rebateName: 'Gas Rebate', variable: 'gas_rebate__person_meets_retail_criteria'},
+        { rebateName: 'Gas Rebate', variable: 'gas_rebate__person_meets_retail_criteria', srcImage:'docs/assets/img/gas_rebate__person_meets_retail_criteria.jpg'},
         { rebateName: 'Free Will Preparation', variable: 'will_preparation_eligible_for_free_will_preparation', srcImage: 'docs/assets/img/will_preparation_eligible_for_free_will_preparation.jpg'}
       ],
       dataReceived: {},
