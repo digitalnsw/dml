@@ -91,7 +91,7 @@ export default {
 },
 {
   variable: 'has_concession_card',
-  text: 'Do you have a Concession card issued by Department of Human Services?',
+  text: 'Do you have a Department of Human Services pensioner concession card?',
   answer: null,
   answers: {
     false: [],
