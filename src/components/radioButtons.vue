@@ -111,7 +111,7 @@ export default {
 },
 {
   variable: 'is_permanent_resident',
-  text: 'Are you a permanent resident?',
+  text: 'Are you a Permanent Resident?',
   answer: null,
   answers: {
     false: [],
