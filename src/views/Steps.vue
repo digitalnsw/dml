@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-2">
           <button v-if="step > 1" class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
-          <button class="au-btn au-btn--block col-md-2 col-md-offset-5 bottom-btn" @click.prevent="next">Next</button>
+          <button :class= "isFirstStepFunction" class="au-btn au-btn--block col-md-2 col-md-offset-5 bottom-btn" @click.prevent="next">Next</button>
         </div>
       </div>
     </form>
@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       step:1,
+      isFirstStep:true,
       dataToSend: {
         persons: {
           parent1: {
@@ -60,6 +61,13 @@ export default {
     userForm,
     radioButtons,
     Result
+  },
+  computed: {
+    isFirstStepFunction: function (){
+      return {
+        'margin-left:300px': this.isFirstStep =  this.step===1 ? true : false
+      }
+    },
   },
   methods:{
     prev() {
