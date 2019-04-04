@@ -34,14 +34,25 @@ body {
 
 .au-body {
     background: #f4f7f9;
-    min-height: 540px;
+    min-height: 600px;
     text-align: center;
 }
 
 .au-body img.icon {
     height: 5rem;
+    margin-top: 3rem;
     padding: 2rem;
 }
+
+.margin-center {
+    float: none !important;
+    margin: 0 auto !important;
+}
+
+.margin-offset {
+    margin-left: 258px;
+}
+
 
 /* 
  * Footer
@@ -71,6 +82,23 @@ body {
 .au-control-input {
     margin-top: 1rem;
 }
+
+/*
+ * Postcode
+ */
+
+ .postcode-spacing {
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    text-align: center;
+ }
+
+.birthdate-spacing {
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
 
 /*
  * Cards
