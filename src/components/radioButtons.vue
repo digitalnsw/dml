@@ -31,7 +31,7 @@ export default {
       questions: [
       {
   variable: 'is_nsw_resident',
-  text: "Are you an NSW resident?",
+  text: "Are you a NSW resident?",
   answer: null,
   answers: {
     false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
@@ -51,7 +51,7 @@ export default {
 },
 {
   variable: 'has_department_human_services_pensioner_concession_card',
-  text: 'Do you have a Human Services pensioner card?',
+  text: 'Do you have a Department of Human Services pensioner concession card?',
   answer: null,
   answers: {
     false: [],
@@ -81,7 +81,7 @@ export default {
 },
 {
   variable: 'has_health_care_card',
-  text: 'Do you have a health care card issued by Department of Human Services??',
+  text: 'Do you have a Department of Human Services health care card?',
   answer: null,
   answers: {
     false: [],
