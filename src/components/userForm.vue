@@ -3,6 +3,8 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group form-spacing">
+          <h2 class="text-center AU-space">Tell us a little about yourself</h2>
+
 
           <!-- 
            Date picker Dropdown
@@ -20,8 +22,8 @@
             <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
           </select> -->
 
-          <div class="col-md-12">
-            <label for="text-input au-text-input--block" value="day" style="width:3rem;">Please enter your birthdate</label>
+          <div class="col-md-12 birthdate-spacing">
+            <label for="text-input au-text-input--block" value="day" style="width:3rem; padding: 12px;">When is your birthdate?</label>
               <input class="au-text-input" id="day" v-model="day" placeholder="Day">
             <label for="text-input"></label>
               <input class="au-text-input" placeholder="Month">
