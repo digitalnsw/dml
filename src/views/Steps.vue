@@ -15,9 +15,9 @@
         <button class="au-btn bottom-btn">Submit</button>
       </div>
       <div class="row">
-        <div class="col-md-10 col-md-offset-2">
-          <button v-if="step > 1" class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
-          <button :class= "isFirstStepFunction" class="au-btn au-btn--block col-md-2 col-md-offset-5 bottom-btn" @click.prevent="next">Next</button>
+        <div class="col-md-10">
+          <button v-if="step > 1" :class= "isSecondStepFunction" class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
+          <button :class= "isFirstStepFunction" class="au-btn bottom-btn col-md-2" style="margin-left:285px;" @click.prevent="next">Next</button>
         </div>
       </div>
     </form>
@@ -36,6 +36,7 @@ export default {
     return {
       step:1,
       isFirstStep:true,
+      isSecondStep:true,
       dataToSend: {
         persons: {
           parent1: {
@@ -65,9 +66,14 @@ export default {
   computed: {
     isFirstStepFunction: function (){
       return {
-        'margin-left:300px': this.isFirstStep =  this.step===1 ? true : false
+        'margin-center': this.isFirstStep =  this.step===1 ? true : false
       }
     },
+    isSecondStepFunction: function (){
+      return {
+        'margin-offset': this.isSecondStep = this.step>1 ? true : false
+      }
+    }
   },
   methods:{
     prev() {
