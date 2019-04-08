@@ -6,7 +6,7 @@
           <h2 class="text-center AU-space bottom-btn">Tell us a little about yourself</h2>
 
             <div class="col-12 postcode-spacing">
-              <h4>Are you a Permanent Resident or Australian citizen?</h4>
+              <h3>Are you a Permanent Resident or Australian citizen?</h3>
 												<label class="au-control-input au-control-input--small">
 													<input class="au-control-input__input" type="radio" value="">
 													<span class="au-control-input__text">Yes</span>
@@ -19,7 +19,7 @@
               </div><!-- end col -->
 
           <div class="col-md-12 birthdate-spacing">
-            <label for="text-input au-text-input--block" value="day" style="width:3rem; padding: 12px;">What is your postcode?</label>
+            <label for="text-input au-text-input--block" value="day" style="width:3rem; padding: 12px;"><h3>What is your postcode?</h3></label>
               <input class="au-text-input" id="day" v-model="day" placeholder="">
               <br>
               <br>
