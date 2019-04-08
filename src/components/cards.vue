@@ -3,7 +3,7 @@
   <div id="result">
     <div class="container au-grid">
       <div class="row">
-        <div class="col-xs-4">
+        <div v-for="(card_obj, index) in cardList.filter(isVisible)" :key="index" class="col-xs-4">
           <div class="card" style="width: 18rem;">
             <img class="card-img-top img-fluid" src="" alt="">
               <div class="card-body">
