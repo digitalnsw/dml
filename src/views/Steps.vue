@@ -9,6 +9,9 @@
         <postcode></postcode>
       </div>
       <div v-else-if="step === 3">
+        <cards></cards>
+      </div>
+      <div v-else-if="step === 4">
         <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList"></radioButtons>
       </div>
       <div  v-else>
@@ -31,6 +34,7 @@ import individualOrHousehold from "../components/individualOrHousehold.vue"
 import postcode from "../components/postcode.vue"
 import radioButtons from "../components/radioButtons.vue"
 import userForm from "../components/userForm.vue"
+import cards from "../components/cards.vue"
 import Result from "../components/Result.vue"
 
 export default {
@@ -84,6 +88,7 @@ export default {
     userForm,
     postcode,
     radioButtons,
+    cards,
     Result
   },
   computed: {
