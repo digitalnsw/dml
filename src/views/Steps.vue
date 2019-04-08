@@ -20,8 +20,8 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <button v-if="step > 1" :class= "isSecondStepFunction" class="au-btn au-btn--block col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
-          <button :class= "isFirstStepFunction" class="au-btn bottom-btn col-md-2 col-md-offset-5" style="" @click.prevent="next">Next</button>
+          <button v-if="step > 1" :class= "isSecondStepFunction" class="au-btn col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
+          <button :class= "isFirstStepFunction" class="au-btn col-md-2 col-md-offset-5 bottom-btn " style="" @click.prevent="next">Next</button>
         </div>
       </div>
     </form>
