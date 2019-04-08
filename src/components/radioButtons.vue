@@ -104,7 +104,7 @@ export default {
   text: 'Are you an Australian citizen?',
   answer: null,
   answers: {
-    false: [],
+    false: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card'],
     true: ['is_permanent_resident']
   },
   visible: true,
@@ -114,7 +114,7 @@ export default {
   text: 'Are you a Permanent Resident?',
   answer: null,
   answers: {
-    false: [],
+    false: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card'],
     true: ['is_australian_citizen']
   },
   visible: true,
