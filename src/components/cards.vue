@@ -3,7 +3,9 @@
   <div id="result">
     <div class="container au-grid">
       <div class="row">
-        <div v-for="(card_obj, index) in cardList.filter(isVisible)" :key="index" class="col-xs-4">
+        <h3>Do you have any of the following Pension or Concession cards?</h3>
+        <div class="col-xs-4 AU-spacing">
+        <!-- <div v-for="(card_obj, index) in cardList.filter(isVisible)" :key="index" class="col-xs-4">-->
           <div class="card" style="width: 18rem;">
             <img class="card-img-top img-fluid" src="" alt="">
               <div class="card-body">
@@ -16,6 +18,7 @@
               </div><!-- card-body -->
           </div><!-- card -->
         </div><!-- end col -->
+
         <div class="col-xs-4">
           <div class="card" style="width: 18rem;">
             <img class="card-img-top img-fluid" src="" alt="">
