@@ -45,12 +45,12 @@ body {
 }
 
 .margin-center {
-    float: none !important;
-    margin: 0 auto !important;
+    float: center !important; 
+    margin-left: 0 auto !important;
 }
 
 .margin-offset {
-    margin-left: 258px;
+    margin-left: 150px;
 }
 
 
