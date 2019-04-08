@@ -5,7 +5,8 @@
         <individualOrHousehold></individualOrHousehold>
       </div>
       <div v-else-if="step === 2">
-        <user-form v-on:updateDateOfBirth="translateText"></user-form>
+        <!-- <user-form v-on:updateDateOfBirth="translateText"></user-form> -->
+        <postcode></postcode>
       </div>
       <div v-else-if="step === 3">
         <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList"></radioButtons>
@@ -27,6 +28,7 @@
 <script>
 import axios from "axios"
 import individualOrHousehold from "../components/individualOrHousehold.vue"
+import postcode from "../components/postcode.vue"
 import radioButtons from "../components/radioButtons.vue"
 import userForm from "../components/userForm.vue"
 import Result from "../components/Result.vue"
@@ -80,6 +82,7 @@ export default {
   components: {
     individualOrHousehold,
     userForm,
+    postcode,
     radioButtons,
     Result
   },
