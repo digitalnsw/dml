@@ -73,12 +73,16 @@ body {
  */
 
 .form-spacing {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     margin-top: 3rem;
 }
 
 .au-control-input {
     margin-top: 1rem;
+}
+
+.form-group {
+    margin-top: 3rem;
 }
 
 /*
