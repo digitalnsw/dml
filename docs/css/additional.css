@@ -84,6 +84,15 @@ body {
 }
 
 /*
+ * Checkboxes
+ */
+
+.checkbox {
+    margin-top: 10rem;
+} 
+
+
+/*
  * Postcode
  */
 
@@ -124,4 +133,8 @@ body {
     padding: 10px;
     padding-bottom: 3rem;
     width: 18rem;
+}
+
+.card-text {
+    min-height: 4rem;
 }
