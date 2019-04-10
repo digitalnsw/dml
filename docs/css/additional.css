@@ -5,8 +5,6 @@
  Tile Grey  #ecf1f3
  Dark Blue  #002664
 
- 
- 
  */
 
 
@@ -97,8 +95,8 @@ body {
  */
 
  .postcode-spacing {
-    margin-bottom: 0rem;
-    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
     text-align: center;
  }
 
