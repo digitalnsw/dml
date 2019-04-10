@@ -1,81 +1,41 @@
 <template>
 
-  <div id="result">
+  <div id="cards">
     <div class="container au-grid">
       <div class="row">
-        <h3>Do you have any of the following Pension or Concession cards?</h3>
-        <div class="col-xs-4 AU-spacing">
-        <!-- <div v-for="(card_obj, index) in cardList.filter(isVisible)" :key="index" class="col-xs-4">-->
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" src="" alt="">
+        <h3>Do you have any of the following Pension, Concession or Membership cards?</h3>
+        <!-- <div class="col-xs-4 AU-spacing"> -->
+        <div v-for="(card_obj, index) in cardsList.filter(isVisible)" :key="index" class="col-xs-4">
+          <div class="card" style="width: 18rem; min-height: 20rem;">
+            <img class="card-img-top img-fluid" :src="card_obj.srcImage" :alt="card_obj.cardName">
               <div class="card-body">
-                <h4 class="card-title">Card name</h4>
-                <p class="card-text">Content about card goes here. Perhaps the eligibility criteria.</p>
+                <h4 class="card-title">{{card_obj.cardName}}<br>{{card_obj.cardName2}}</h4>
+                <p class="card-text">{{card_obj.cardText}}</p>
                 <br>
-                <a href="#" class="btn btn-primary">Link to Rebate website</a>
+                <input type="radio" :value="card_obj.variable" name="cards">
                 <br>
                 <br>
               </div><!-- card-body -->
           </div><!-- card -->
         </div><!-- end col -->
-
-        <div class="col-xs-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" src="" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Card name</h4>
-                <p class="card-text">Content about card goes here. Perhaps the eligibility criteria.</p>
-                <br>
-                <a href="#" class="btn btn-primary">Link to Rebate website</a>
-                <br>
-                <br>
-              </div><!-- card-body -->
-          </div><!-- card -->
-        </div><!-- end col -->
-        <div class="col-xs-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" src="" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Card name</h4>
-                <p class="card-text">Content about card goes here. Perhaps the eligibility criteria.</p>
-                <br>
-                <a href="#" class="btn btn-primary">Link to Rebate website</a>
-                <br>
-                <br>
-              </div><!-- card-body -->
-          </div><!-- card -->
-        </div><!-- end col -->
-        <div class="col-xs-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" src="" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Card name</h4>
-                <p class="card-text">Content about card goes here. Perhaps the eligibility criteria.</p>
-                <br>
-                <a href="#" class="btn btn-primary">Link to Rebate website</a>
-                <br>
-                <br>
-              </div><!-- card-body -->
-          </div><!-- card -->
-        </div><!-- end col -->
-        <div class="col-xs-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" src="" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Card name</h4>
-                <p class="card-text">Content about card goes here. Perhaps the eligibility criteria.</p>
-                <br>
-                <a href="#" class="btn btn-primary">Link to Rebate website</a>
-                <br>
-                <br>
-              </div><!-- card-body -->
-          </div><!-- card -->
-        </div><!-- end col -->
-        
+      
       </div><!-- row -->
     </div><!-- container -->
-  </div><!-- result -->
+  </div><!-- cards -->
+
 </template>
 
 <script>
+export default {
+  props: ['cardsList'],
+methods: {
+    isVisible(value) {
+      if(value.visible == true) {
+        return true
+      } else {
+        return false
+        }
+    }
+}
+}
 </script>
