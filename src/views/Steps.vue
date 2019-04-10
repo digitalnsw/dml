@@ -25,6 +25,7 @@
         </div>
       </div>
     </form>
+    <buttons></buttons>
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import radioButtons from "../components/radioButtons.vue"
 import userForm from "../components/userForm.vue"
 import cards from "../components/cards.vue"
 import Result from "../components/Result.vue"
+import Buttons from "../components/Buttons.vue"
 
 export default {
   data() {
@@ -89,7 +91,8 @@ export default {
     postcode,
     radioButtons,
     cards,
-    Result
+    Result,
+    Buttons
   },
   computed: {
     isFirstStepFunction: function (){

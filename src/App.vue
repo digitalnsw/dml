@@ -2,6 +2,7 @@
   <div id="app">
     <div class="container">
       <steps></steps>
+      <router-view></router-view>
     </div>
   </div>
 </template>

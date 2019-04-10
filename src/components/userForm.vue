@@ -36,6 +36,7 @@
         </div><!-- form group -->
       </div> <!-- end col -->
     </div><!-- row -->
+    <buttons></buttons>
   </div>
 </template>
 

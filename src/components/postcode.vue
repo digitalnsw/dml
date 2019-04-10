@@ -7,10 +7,10 @@
 
             <div class="col-12 postcode-spacing">
               <h3>Are you a Permanent Resident or Australian citizen?</h3>
-												<label class="au-control-input au-control-input--small">
-													<input class="au-control-input__input" type="radio" value="">
-													<span class="au-control-input__text">Yes</span>
-												</label>
+                        <label class="au-control-input au-control-input--small">
+                          <input class="au-control-input__input" type="radio" value="">
+                          <span class="au-control-input__text">Yes</span>
+                        </label>
 
                         <label class="au-control-input au-control-input--small">
                           <input class="au-control-input__input" type="radio" value="">
@@ -28,8 +28,18 @@
         </div><!-- form group -->
       </div> <!-- end col -->
     </div><!-- row -->
+    <buttons></buttons>
   </div>
 </template>
 
 <script>
+
+ import Buttons from './Buttons.vue'
+
+export default {
+  components: {
+    Buttons
+  }
+}
+
 </script>

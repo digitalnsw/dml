@@ -16,15 +16,19 @@
         </div><!-- form group -->
       </div> <!-- end col -->
     </div><!-- row -->
+    <buttons></buttons>
   </div><!-- radio buttons -->
 </template>
 
 <script>
 
+import Buttons from './Buttons.vue'
+
 export default {
   name: 'radioButtons',
   props: ['rebatesList'],
   components: {
+    Buttons
   },
   data () {
     return {

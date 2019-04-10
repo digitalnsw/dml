@@ -74,8 +74,18 @@
         
       </div><!-- row -->
     </div><!-- container -->
+    <buttons></buttons>
   </div><!-- result -->
 </template>
 
 <script>
+
+import Buttons from './Buttons.vue'
+
+export default {
+  components: {
+    Buttons
+  }
+}
+
 </script>
