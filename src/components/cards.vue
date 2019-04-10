@@ -3,7 +3,7 @@
   <div id="cards">
     <div class="container au-grid">
       <div class="row">
-        <h3>Do you have any of the following Pension, Concession or Membership cards?</h3>
+        <h3>Do you have any of the following Concession, Pension or Membership cards?</h3>
         <!-- <div class="col-xs-4 AU-spacing"> -->
         <div v-for="(card_obj, index) in cardsList.filter(isVisible)" :key="index" class="col-xs-4">
           <div class="card" style="">
