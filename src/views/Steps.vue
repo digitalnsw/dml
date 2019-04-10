@@ -14,7 +14,7 @@
       <div v-else-if="step === 4">
         <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList"></radioButtons>
       </div>
-      <div  v-else>
+      <div v-else>
         <result :dataReceived="dataReceived" :rebatesList="rebatesList"></result>
         <button class="au-btn bottom-btn">Submit</button>
       </div>
