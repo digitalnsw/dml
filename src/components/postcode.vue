@@ -7,23 +7,13 @@
 
             <div class="col-12 postcode-spacing">
               <h3>Are you a Permanent Resident or Australian citizen?</h3>
-<<<<<<< Updated upstream
-
                 <label class="au-control-input au-control-input--small">
-                  <input class="au-control-input__input" type="radio" value="">
+                  <input class="au-control-input__input" name="typeOfResidency" type="radio" value="individual">
                   <span class="au-control-input__text">Yes</span>
                 </label>
 
                 <label class="au-control-input au-control-input--small">
-=======
-                <label class="au-control-input au-control-input--small">
-                  <input class="au-control-input__input" type="radio" value="">
-                  <span class="au-control-input__text">Yes</span>
-                </label>
-
-                <label class="au-control-input au-control-input--small">
->>>>>>> Stashed changes
-                  <input class="au-control-input__input" name="typeOfResidency" type="radio" value="">
+                  <input class="au-control-input__input" name="typeOfResidency" type="radio" value="household">
                   <span class="au-control-input__text">No</span>
                 </label>
               </div><!-- end col -->
