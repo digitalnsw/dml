@@ -31,7 +31,7 @@
 <script>
 export default {
   props: ['cardsList'],
-methods: {
+  methods: {
     isVisible(value) {
       if(value.visible == true) {
         return true
@@ -39,6 +39,6 @@ methods: {
         return false
         }
     }
-}
+  }
 }
 </script>

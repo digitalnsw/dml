@@ -6,13 +6,13 @@
       </div>
       <div v-else-if="step === 2">
         <!-- <user-form v-on:updateDateOfBirth="translateText"></user-form> -->
-        <postcode></postcode>
+        <postcode v-on:updateQuestionsToRemove="updateQuestionsToRemove"></postcode>
       </div>
       <div v-else-if="step === 3">
         <cards :cardsList="cardsList"></cards>
       </div>
       <div v-else-if="step === 4">
-        <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList"></radioButtons>
+        <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList" :questionsToRemove="questionsToRemove"></radioButtons>
       </div>
       <div v-else>
         <result :dataReceived="dataReceived" :rebatesList="rebatesList"></result>
@@ -132,6 +132,7 @@ export default {
         }
       ],
       dataReceived: {},
+      questionsToRemove: []
     }
   },
   components: {
@@ -201,6 +202,9 @@ export default {
     },
     updateAnswers(merged) {
       this.dataToSend.persons.parent1 = merged
+    },
+    updateQuestionsToRemove(questionsToRemove) {
+      this.questionsToRemove.push(...questionsToRemove)
     },
     formSend() {
       axios
