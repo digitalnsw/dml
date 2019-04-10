@@ -16,7 +16,7 @@
 											<img class="icon" src="docs/assets/img/individual.png" alt="Individual">
                       <div class="col-12">
 												<label class="au-control-input au-control-input--small bottom-btn">
-													<input class="au-control-input__input" type="radio" value="true">
+													<input class="au-control-input__input" name="typeOfApplicant" type="radio" value="individual">
 													<span class="au-control-input__text">Individual</span>
 												</label>
                       </div>
@@ -26,7 +26,7 @@
 											<img class="icon" src="docs/assets/img/teens.png" alt="Household">
                       <div class="col-12">
 												<label class="au-control-input au-control-input--small margin bottom-btn">
-													<input class="au-control-input__input" type="radio" value="true">
+													<input class="au-control-input__input" name="typeOfApplicant" type="radio" value="household">
 													<span class="au-control-input__text">Household</span>
 												</label>
                       </div>
