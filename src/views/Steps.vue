@@ -9,7 +9,7 @@
         <postcode></postcode>
       </div>
       <div v-else-if="step === 3">
-        <cards></cards>
+        <cards :cardsList="cardsList"></cards>
       </div>
       <div v-else-if="step === 4">
         <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList"></radioButtons>
@@ -54,6 +54,57 @@ export default {
           }
         }
       },
+      cardsList: [
+       
+         {
+          cardName: 'DHS',
+          cardName2:'Health Care Card',
+          variable:'has_health_care_card',
+          srcImage: 'docs/assets/img/600x260.jpg',
+          cardText: 'Department of Human Services Health Care Card',
+          visible: true,
+        },
+         {
+          cardName: 'DHS',
+          cardName2:'Concession Card',
+          variable:'has_concession_card',
+          srcImage: 'docs/assets/img/600x260.jpg',
+          cardText: 'Department of Human Services Concession card',
+          visible: true,
+        },
+         {
+          cardName: 'DHS',
+          cardName2:'Pensioner Concession Card',
+          variable:'has_department_human_services_pensioner_concession_card',
+          srcImage: 'docs/assets/img/600x260.jpg',
+          cardText: 'Department of Human Services Pensioner Concession card',
+          visible: true,
+        },
+        {
+          cardName: 'DVA',
+          cardName2: 'Pensioner Concession Card',
+          variable:'has_department_veteran_affairs_pensioner_concession_card',
+          srcImage: 'docs/assets/img/600x260.jpg',
+          cardText: 'Veteran Affairs Pensioner Concession card',
+          visible: true,
+        },
+        {
+          cardName: 'DVA',
+          cardName2:'Gold Card',
+          variable:'has_department_veteran_affairs_gold_card',
+          srcImage: 'docs/assets/img/600x260.jpg',
+          cardText: 'Veteran Affairs Gold Card',
+          visible: true,
+        },
+         {
+          cardName: 'NRMA',
+          cardName2:'Membership Card',
+          variable:'NRMA_free2go__is_NRMA_member',
+          srcImage: 'docs/assets/img/600x260.jpg',
+          cardText: 'NRMA Membership Card',
+          visible: true,
+        }
+      ],
       rebatesList: [
         {
           rebateName: 'NRMA Free2Go',

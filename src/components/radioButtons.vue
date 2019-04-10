@@ -37,7 +37,7 @@ export default {
     false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
     true: ['is_act_resident']
   },
-  visible: true,
+  visible: false,
 },
 {
   variable: 'is_act_resident',
@@ -47,7 +47,7 @@ export default {
     false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
     true: ['is_nsw_resident']
   },
-  visible: true,
+  visible: false,
 },
 {
   variable: 'has_department_human_services_pensioner_concession_card',
@@ -107,7 +107,7 @@ export default {
     false: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card'],
     true: ['is_permanent_resident']
   },
-  visible: true,
+  visible: false,
 },
 {
   variable: 'is_permanent_resident',
@@ -117,7 +117,7 @@ export default {
     false: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card'],
     true: ['is_australian_citizen']
   },
-  visible: true,
+  visible: false,
 },
 {
   variable: 'is_full_age_pension_recipient',
