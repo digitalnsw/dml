@@ -5,8 +5,8 @@
         <individualOrHousehold></individualOrHousehold>
       </div>
       <div v-else-if="step === 2">
-        <!-- <user-form v-on:updateDateOfBirth="translateText"></user-form> -->
         <postcode v-on:updateQuestionsToRemove="updateQuestionsToRemove"></postcode>
+        <user-form v-on:updateDateOfBirth="translateText"></user-form>
       </div>
       <div v-else-if="step === 3">
         <cards :cardsList="cardsList"></cards>
