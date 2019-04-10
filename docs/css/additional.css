@@ -97,14 +97,13 @@ body {
  */
 
  .postcode-spacing {
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
     margin-top: 5rem;
     text-align: center;
  }
 
 .birthdate-spacing {
     margin-bottom: 5rem;
-    margin-top: 3rem;
     text-align: center;
 }
 

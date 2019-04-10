@@ -1,14 +1,9 @@
 <template>
   <div id="user-form">
     <div class="row">
-      <div class="col-md-12">
-        <div class="form-group form-spacing">
-          <h2 class="text-center AU-space">Tell us a little about yourself</h2>
-
-
-          <!-- 
-           Date picker Dropdown
-          <label for="day">What is your birthdate?</label>
+      <div class="col-md-12 birthdate-spacing">
+        <div class="form-group" style="margin-bottom: 5rem;">
+          <h3>What is your birth date?</h3>
           <select id="day" v-model="day" class="au-select">
             <option disabled value="">Day</option>
             <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
@@ -20,23 +15,12 @@
           <select id="year" v-model="year" class="au-select">
             <option disabled value="">Year</option>
             <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-          </select> -->
+          </select>
 
-          <div class="col-md-12 birthdate-spacing">
-            <label for="text-input au-text-input--block" value="day" style="width:3rem; padding: 12px;">When is your birthdate?</label>
-              <input class="au-text-input" id="day" v-model="day" placeholder="Day">
-            <label for="text-input"></label>
-              <input class="au-text-input" placeholder="Month">
-            <label for="text-input"></label>
-              <input class="au-text-input mb-5" placeholder="Year">
-              <br>
-              <br>
-              <br>
-            </div><!-- end col -->
-        </div><!-- form group -->
-      </div> <!-- end col -->
-    </div><!-- row -->
-  </div>
+            </div><!-- form-group -->
+        </div><!-- end col-->
+      </div> <!-- row -->
+    </div><!-- user-form -->
 </template>
 
 <script>
