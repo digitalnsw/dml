@@ -21,12 +21,12 @@
             <div class="col-md-12 postcode-spacing">
               <h3>Are you a NSW Resident?</h3>
                   <label class="au-control-input au-control-input--small">
-                    <input class="au-control-input__input" name="NSWResidency" type="radio" value="">
+                    <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="true">
                     <span class="au-control-input__text">Yes</span>
                   </label>
 
                   <label class="au-control-input au-control-input--small">
-                    <input class="au-control-input__input" name="NSWResidency" type="radio" value="">
+                    <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="false">
                     <span class="au-control-input__text">No</span>
                   </label>
             </div><!-- end col -->
@@ -48,14 +48,34 @@ export default {
   data() {
     return {
       residencyQuestions: [
+        'is_family_tax_benefit_recipient',
+        'is_energy_account_holder',
+        'is_australian_citizen',
+        'is_permanent_resident',
+        'is_full_age_pension_recipient',
+        'is_veterans_pension_recipient',
+        'gas_rebate__already_issued_in_financial_year',
+        'energy_bottled_gas_user',
+        'energy_provider_supply_customer'
       ]
     }
   },
   destroyed() {
     if(this.typeOfResidency === 'true') {
-      this.$emit('updateQuestionsToRemove', )
+      var typeOfResidency = {
+        is_permanent_resident: { "2019-04": true },
+        is_australian_citizen: { "2019-04": true }
+      }
+      this.$emit('updateAnswers', typeOfResidency)
+    }
+    if(this.NSWResidency === 'true') {
+      var NSWResidency = {
+        is_nsw_resident: { "2019-04": true },
+      }
+      this.$emit('updateAnswers', NSWResidency)
+      
     } else {
-      this.$emit('updateQuestionsToRemove', [])
+      this.$emit('updateQuestionsToRemove', this.residencyQuestions)
     }
     
   }

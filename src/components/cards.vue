@@ -13,9 +13,9 @@
                 <p class="card-text">{{card_obj.cardText}}</p>
                 <br>
                 <label class="au-control-input au-control-input--small" style="margin-top: 3rem;" >
-									<input class="au-control-input__input" name="cards" type="checkbox" :value="card_obj.variable">
-									<span class="au-control-input__text"></span>
-								</label>
+                  <input class="au-control-input__input" name="cards" v-model="card_obj.answer" type="checkbox" :value="card_obj.variable">
+                  <span class="au-control-input__text"></span>
+                </label>
                 <br>
                 <br>
               </div><!-- card-body -->
@@ -39,6 +39,17 @@ export default {
         return false
         }
     }
+  },
+  destroyed() {
+    const arrayToObject = (array) =>
+      array.reduce((obj, item) => {
+        obj[item.variable] = { "2019-04": item.answer }
+        return obj
+      }, {})
+
+    const answersObject = arrayToObject(this.$props.cardsList)
+
+    this.$emit('updateAnswers', answersObject)
   }
 }
 </script>

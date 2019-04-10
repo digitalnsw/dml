@@ -29,26 +29,6 @@ export default {
   data () {
     return {
       questions: [
-      {
-  variable: 'is_nsw_resident',
-  text: "Are you a NSW resident?",
-  answer: null,
-  answers: {
-    false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
-    true: ['is_act_resident']
-  },
-  visible: false,
-},
-{
-  variable: 'is_act_resident',
-  text: 'Are you an ACT resident?',
-  answer: null,
-  answers: {
-    false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
-    true: ['is_nsw_resident']
-  },
-  visible: false,
-},
 {
   variable: 'is_full_age_pension_recipient',
   text: 'Are you a full-age pension recipient from Department of Human Services?',
@@ -158,22 +138,20 @@ export default {
   created() {
     this.$props.questionsToRemove.forEach( element => {
       let questionToProcess2 = this.questions.find(question => question.variable == element)
-      questionToProcess2.visible = false
+      if(questionToProcess2) {
+        questionToProcess2.visible = false
+      }
     })
   },
   destroyed() {
-    var newArray = []
-    for(var i = 1; i < this.questions.length; i++) {
-      newArray.push(this.questions[i].variable)
-    }
     const arrayToObject = (array) =>
       array.reduce((obj, item) => {
-        obj[item.variable] = { "2019-03": item.answer }
+        obj[item.variable] = { "2019-04": item.answer }
         return obj
       }, {})
     const arrayToObject2 = (array) =>
       array.reduce((obj, item) => {
-        obj[item.variable] = { "2019-03": null }
+        obj[item.variable] = { "2019-04": null }
         return obj
       }, {})
 

@@ -5,11 +5,11 @@
         <individualOrHousehold></individualOrHousehold>
       </div>
       <div v-else-if="step === 2">
-        <postcode v-on:updateQuestionsToRemove="updateQuestionsToRemove"></postcode>
+        <postcode v-on:updateAnswers="updateAnswers" v-on:updateQuestionsToRemove="updateQuestionsToRemove"></postcode>
         <user-form v-on:updateDateOfBirth="translateText"></user-form>
       </div>
       <div v-else-if="step === 3">
-        <cards :cardsList="cardsList"></cards>
+        <cards v-on:updateAnswers="updateAnswers" :cardsList="cardsList"></cards>
       </div>
       <div v-else-if="step === 4">
         <radioButtons v-on:updateAnswers="updateAnswers" :rebatesList="rebatesList" :questionsToRemove="questionsToRemove"></radioButtons>
@@ -62,6 +62,7 @@ export default {
           variable:'has_health_care_card',
           srcImage: 'docs/assets/img/600x260.jpg',
           cardText: 'Department of Human Services Health Care Card',
+          answer: null,
           visible: true,
         },
          {
@@ -70,6 +71,7 @@ export default {
           variable:'has_concession_card',
           srcImage: 'docs/assets/img/600x260.jpg',
           cardText: 'Department of Human Services Concession card',
+          answer: null,
           visible: true,
         },
          {
@@ -78,6 +80,7 @@ export default {
           variable:'has_department_human_services_pensioner_concession_card',
           srcImage: 'docs/assets/img/600x260.jpg',
           cardText: 'Department of Human Services Pensioner Concession card',
+          answer: null,
           visible: true,
         },
         {
@@ -86,6 +89,7 @@ export default {
           variable:'has_department_veteran_affairs_pensioner_concession_card',
           srcImage: 'docs/assets/img/600x260.jpg',
           cardText: 'Veteran Affairs Pensioner Concession card',
+          answer: null,
           visible: true,
         },
         {
@@ -94,6 +98,7 @@ export default {
           variable:'has_department_veteran_affairs_gold_card',
           srcImage: 'docs/assets/img/600x260.jpg',
           cardText: 'Veteran Affairs Gold Card',
+          answer: null,
           visible: true,
         },
          {
@@ -102,6 +107,7 @@ export default {
           variable:'NRMA_free2go__is_NRMA_member',
           srcImage: 'docs/assets/img/600x260.jpg',
           cardText: 'NRMA Membership Card',
+          answer: null,
           visible: true,
         }
       ],
@@ -164,44 +170,16 @@ export default {
     },
     translateText(formatted_date) {
 
-      let child = {
-            is_nsw_resident: {
-              "2019-03": true
-            },
-            is_enrolled_in_school: {
-              "2019-03": true
-            },
-            birth: {
-              ETERNITY: ""
-            },
-            age: {
-              "2019-03": null
-            },
-            has_valid_medicare_card: {
-              "2019-03": true
-            },
-            active_kids__child_meets_criteria: {
-              "2019-03": null
-            },
-            creative_kids__child_meets_criteria: {
-              "2019-03": null
-            },
-            active_kids__voucher_amount: {
-              "2019-03": null
-            },
-            creative_kids__voucher_amount: {
-              "2019-03": null
-            }
-          }
+      this.dataToSend.persons.parent1.birth = {}
 
-      //this.dataToSend.persons.child1 = child
-
-      //this.dataToSend.families.family1.children = ['child1']
-
-      //this.dataToSend.persons.child1.birth.ETERNITY = formatted_date
+      this.dataToSend.persons.parent1.birth.ETERNITY = formatted_date
     },
     updateAnswers(merged) {
-      this.dataToSend.persons.parent1 = merged
+      let currentData = this.dataToSend.persons.parent1
+
+      this.dataToSend.persons.parent1 = {...currentData,...merged}
+
+      console.log(this.dataToSend.persons.parent1)
     },
     updateQuestionsToRemove(questionsToRemove) {
       this.questionsToRemove.push(...questionsToRemove)
