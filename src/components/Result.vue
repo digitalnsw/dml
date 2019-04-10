@@ -5,7 +5,7 @@
       <div class="row">
         <div v-for="(rebate_obj, index) in rebatesList.filter(isVisible)" :key="index" class="col-xs-4">
 
-          <div class="card" style="width: 18rem;">
+          <div class="result-card" style="width: 18rem;">
             <img class="card-img-top img-fluid" :src="rebate_obj.srcImage" :alt="rebate_obj.rebateName">
               <div class="card-body">
                 <h4 class="card-title">{{rebate_obj.rebateName}}</h4>
