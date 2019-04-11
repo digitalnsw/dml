@@ -5,30 +5,30 @@
         <div class="form-group form-spacing">
           <h2 class="text-center AU-space bottom-btn">Tell us a little about yourself</h2>
 
-            <div class="col-md-12 postcode-spacing">
+            <div class="postcode-spacing">
               <h3>Are you a Permanent Resident or Australian citizen?</h3>
-                <label class="au-control-input au-control-input--small">
-                  <input class="au-control-input__input" name="typeOfResidency" v-model="typeOfResidency" type="radio" value="true">
-                  <span class="au-control-input__text">Yes</span>
-                </label>
+              <label class="au-control-input au-control-input--small">
+                <input class="au-control-input__input" name="typeOfResidency" v-model="typeOfResidency" type="radio" value="true">
+                <span class="au-control-input__text">Yes</span>
+              </label>
 
-                <label class="au-control-input au-control-input--small">
-                  <input class="au-control-input__input" name="typeOfResidency" v-model="typeOfResidency" type="radio" value="false">
-                  <span class="au-control-input__text">No</span>
-                </label>
+              <label class="au-control-input au-control-input--small">
+                <input class="au-control-input__input" name="typeOfResidency" v-model="typeOfResidency" type="radio" value="false">
+                <span class="au-control-input__text">No</span>
+              </label>
             </div><!-- end col -->
 
-            <div class="col-md-12 postcode-spacing">
+            <div class="postcode-spacing">
               <h3>Are you a NSW Resident?</h3>
-                  <label class="au-control-input au-control-input--small">
-                    <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="true">
-                    <span class="au-control-input__text">Yes</span>
-                  </label>
+              <label class="au-control-input au-control-input--small">
+                <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="true">
+                <span class="au-control-input__text">Yes</span>
+              </label>
 
-                  <label class="au-control-input au-control-input--small">
-                    <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="false">
-                    <span class="au-control-input__text">No</span>
-                  </label>
+              <label class="au-control-input au-control-input--small">
+                <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="false">
+                <span class="au-control-input__text">No</span>
+              </label>
             </div><!-- end col -->
 
          <!--  <div class="col-md-12 birthdate-spacing">

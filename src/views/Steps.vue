@@ -19,9 +19,9 @@
         <button class="au-btn bottom-btn">Submit</button>
       </div>
       <div class="row">
-        <div class="col-12">
-          <button v-if="step > 1" :class= "isSecondStepFunction" class="au-btn col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
-          <button :class= "isFirstStepFunction" class="au-btn col-md-2 col-md-offset-5 bottom-btn " style="" @click.prevent="next">Next</button>
+        <div>
+          <button v-if="step > 1" :class="isSecondStepFunction" class="au-btn col-md-2 bottom-btn" @click.prevent="prev">Previous</button>
+          <button :class="isFirstStepFunction" class="au-btn col-md-2 col-md-offset-5 bottom-btn" @click.prevent="next">Next</button>
         </div>
       </div>
     </form>

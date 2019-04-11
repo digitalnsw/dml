@@ -5,8 +5,8 @@
       <div class="row">
         <h3>Do you have any of the following Concession, Pension or Membership cards?</h3>
         <!-- <div class="col-xs-4 AU-spacing"> -->
-        <div v-for="(card_obj, index) in cardsList.filter(isVisible)" :key="index" class="col-xs-4">
-          <div class="card" style="">
+        <div v-for="(card_obj, index) in cardsList.filter(isVisible)" :key="index" class="col-md-4 col-xs-6">
+          <div class="card">
             <img class="card-img-top img-fluid" :src="card_obj.srcImage" :alt="card_obj.cardName">
               <div class="card-body">
                 <h4 class="card-title">{{card_obj.cardName}}<br>{{card_obj.cardName2}}</h4>
