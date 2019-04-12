@@ -26,12 +26,12 @@
 <script>
 export default {
   destroyed(){
-    let textToTranslate = this.year + '/' + this.month + '/' + this.day
-      textToTranslate = new Date(textToTranslate)
+    let dateBeforeFormat = this.year + '/' + this.month + '/' + this.day
+      dateBeforeFormat = new Date(dateBeforeFormat)
       let formatted_date =
-          textToTranslate.getFullYear() + '-'
-          + ('0' + (textToTranslate.getMonth()+1)).slice(-2) + '-'
-          + ('0' + textToTranslate.getDate()).slice(-2)
+          dateBeforeFormat.getFullYear() + '-'
+          + ('0' + (dateBeforeFormat.getMonth()+1)).slice(-2) + '-'
+          + ('0' + dateBeforeFormat.getDate()).slice(-2)
       this.$emit('updateDateOfBirth', formatted_date)
   },
   data() {
@@ -39,7 +39,6 @@ export default {
       day: '',
       month: '',
       year: '',
-      textToTranslate: '',
       months: [
         "January",
         "February",
@@ -66,7 +65,7 @@ export default {
     },
     days() {
       let daysWithZero = []
-      for (var i = 1; i <= 31; i++) {
+      for (let i = 1; i <= 31; i++) {
         if (i < 10) {
           daysWithZero.push("0" + i)
         } else {

@@ -6,7 +6,7 @@
       </div>
       <div v-else-if="step === 2">
         <postcode v-on:updateAnswers="updateAnswers" v-on:updateQuestionsToRemove="updateQuestionsToRemove"></postcode>
-        <user-form v-on:updateDateOfBirth="translateText"></user-form>
+        <user-form v-on:updateDateOfBirth="updateDateOfBirth"></user-form>
       </div>
       <div v-else-if="step === 3">
         <cards v-on:updateAnswers="updateAnswers" :cardsList="cardsList"></cards>
@@ -168,7 +168,7 @@ export default {
     next() {
       this.step++
     },
-    translateText(formatted_date) {
+    updateDateOfBirth(formatted_date) {
 
       this.dataToSend.persons.parent1.birth = {}
 

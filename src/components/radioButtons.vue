@@ -144,14 +144,19 @@ export default {
     })
   },
   destroyed() {
+    let currentMonth = (new Date().getMonth() + 1).toString()
+    const currentYear = new Date().getFullYear()
+
+    currentMonth = currentMonth.padStart(2, 0)
+    const yearMonth = currentYear + '-' + currentMonth
     const arrayToObject = (array) =>
       array.reduce((obj, item) => {
-        obj[item.variable] = { "2019-04": item.answer }
+        obj[item.variable] = { [yearMonth]: item.answer }
         return obj
       }, {})
     const arrayToObject2 = (array) =>
       array.reduce((obj, item) => {
-        obj[item.variable] = { "2019-04": null }
+        obj[item.variable] = { [yearMonth]: null }
         return obj
       }, {})
 

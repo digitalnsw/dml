@@ -61,16 +61,22 @@ export default {
     }
   },
   destroyed() {
+    let currentMonth = (new Date().getMonth() + 1).toString()
+    const currentYear = new Date().getFullYear()
+
+    currentMonth = currentMonth.padStart(2, 0)
+    const yearMonth = currentYear + '-' + currentMonth
+
     if(this.typeOfResidency === 'true') {
-      var typeOfResidency = {
-        is_permanent_resident: { "2019-04": true },
-        is_australian_citizen: { "2019-04": true }
+      const typeOfResidency = {
+        is_permanent_resident: { [yearMonth]: true },
+        is_australian_citizen: { [yearMonth]: true }
       }
       this.$emit('updateAnswers', typeOfResidency)
     }
     if(this.NSWResidency === 'true') {
-      var NSWResidency = {
-        is_nsw_resident: { "2019-04": true },
+      const NSWResidency = {
+        is_nsw_resident: { [yearMonth]: true },
       }
       this.$emit('updateAnswers', NSWResidency)
       
