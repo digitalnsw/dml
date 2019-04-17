@@ -1,14 +1,9 @@
 <template>
   <div id="user-form">
     <div class="row">
-      <div class="col-md-12">
-        <div class="form-group form-spacing">
-          <h2 class="text-center AU-space">Tell us a little about yourself</h2>
-
-
-          <!-- 
-           Date picker Dropdown
-          <label for="day">What is your birthdate?</label>
+      <div class="col-md-12 birthdate-spacing">
+        <div class="form-group" style="margin-bottom: 5rem;">
+          <h3>What is your birth date?</h3>
           <select id="day" v-model="day" class="au-select">
             <option disabled value="">Day</option>
             <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
@@ -20,35 +15,23 @@
           <select id="year" v-model="year" class="au-select">
             <option disabled value="">Year</option>
             <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-          </select> -->
+          </select>
 
-          <div class="col-md-12 birthdate-spacing">
-            <label for="text-input au-text-input--block" value="day" style="width:3rem; padding: 12px;">When is your birthdate?</label>
-              <input class="au-text-input" id="day" v-model="day" placeholder="Day">
-            <label for="text-input"></label>
-              <input class="au-text-input" placeholder="Month">
-            <label for="text-input"></label>
-              <input class="au-text-input mb-5" placeholder="Year">
-              <br>
-              <br>
-              <br>
-            </div><!-- end col -->
-        </div><!-- form group -->
-      </div> <!-- end col -->
-    </div><!-- row -->
-    <buttons></buttons>
-  </div>
+          </div><!-- form-group -->
+        </div><!-- end col-->
+      </div> <!-- row -->
+    </div><!-- user-form -->
 </template>
 
 <script>
 export default {
   destroyed(){
-    let textToTranslate = this.year + '/' + this.month + '/' + this.day
-      textToTranslate = new Date(textToTranslate)
+    let dateBeforeFormat = this.year + '/' + this.month + '/' + this.day
+      dateBeforeFormat = new Date(dateBeforeFormat)
       let formatted_date =
-          textToTranslate.getFullYear() + '-'
-          + ('0' + (textToTranslate.getMonth()+1)).slice(-2) + '-'
-          + ('0' + textToTranslate.getDate()).slice(-2)
+          dateBeforeFormat.getFullYear() + '-'
+          + ('0' + (dateBeforeFormat.getMonth()+1)).slice(-2) + '-'
+          + ('0' + dateBeforeFormat.getDate()).slice(-2)
       this.$emit('updateDateOfBirth', formatted_date)
   },
   data() {
@@ -56,7 +39,6 @@ export default {
       day: '',
       month: '',
       year: '',
-      textToTranslate: '',
       months: [
         "January",
         "February",
@@ -83,7 +65,7 @@ export default {
     },
     days() {
       let daysWithZero = []
-      for (var i = 1; i <= 31; i++) {
+      for (let i = 1; i <= 31; i++) {
         if (i < 10) {
           daysWithZero.push("0" + i)
         } else {

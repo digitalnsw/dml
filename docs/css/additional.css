@@ -5,8 +5,6 @@
  Tile Grey  #ecf1f3
  Dark Blue  #002664
 
- 
- 
  */
 
 
@@ -75,7 +73,7 @@ body {
  */
 
 .form-spacing {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     margin-top: 3rem;
 }
 
@@ -83,19 +81,31 @@ body {
     margin-top: 1rem;
 }
 
+.form-group {
+    margin-top: 3rem;
+}
+
+/*
+ * Checkboxes
+ */
+
+.checkbox {
+    margin-top: 10rem;
+} 
+
+
 /*
  * Postcode
  */
 
  .postcode-spacing {
-    margin-bottom: 3rem;
-    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
     text-align: center;
  }
 
 .birthdate-spacing {
     margin-bottom: 5rem;
-    margin-top: 3rem;
     text-align: center;
 }
 
@@ -104,10 +114,28 @@ body {
  * Cards
  */
 
-.card {
+.result-card {
     border: 1.5px solid #002664;
     border-radius: 5px;
     margin-bottom: 4rem;
     margin-top: 3rem;
+    max-height: 15rem;
     padding: 10px;
+    padding-bottom: 3rem;
+    width: 18rem;
 } 
+
+.card {
+    border: 1.5px solid #002664;
+    border-radius: 5px;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+    max-height: 15rem;
+    padding: 10px;
+    padding-bottom: 3rem;
+    width: 18rem;
+}
+
+.card-text {
+    min-height: 4rem;
+}

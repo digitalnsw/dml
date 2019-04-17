@@ -26,103 +26,13 @@ import Buttons from './Buttons.vue'
 
 export default {
   name: 'radioButtons',
-  props: ['rebatesList'],
+  props: ['rebatesList', 'questionsToRemove'],
   components: {
     Buttons
   },
   data () {
     return {
       questions: [
-      {
-  variable: 'is_nsw_resident',
-  text: "Are you a NSW resident?",
-  answer: null,
-  answers: {
-    false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
-    true: ['is_act_resident']
-  },
-  visible: true,
-},
-{
-  variable: 'is_act_resident',
-  text: 'Are you an ACT resident?',
-  answer: null,
-  answers: {
-    false: ['is_family_tax_benefit_recipient', 'is_energy_account_holder', 'has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_australian_citizen', 'is_permanent_resident', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user', 'energy_provider_supply_customer'],
-    true: ['is_nsw_resident']
-  },
-  visible: true,
-},
-{
-  variable: 'has_department_human_services_pensioner_concession_card',
-  text: 'Do you have a Department of Human Services pensioner concession card?',
-  answer: null,
-  answers: {
-    false: [],
-    true: ['has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'has_health_care_card', 'has_concession_card']
-  },
-  visible: true,
-},
-{
-  variable: 'has_department_veteran_affairs_pensioner_concession_card',
-  text: 'Do you have a Veteran Affairs pensioner concession card?',
-  answer: null,
-  answers: {
-    false: [],
-    true: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'has_health_care_card', 'has_concession_card']
-  },
-  visible: true,
-},
-{
-  variable: 'has_department_veteran_affairs_gold_card',
-  text: 'Do you have a Veterans Affairs gold card?',
-  answer: null,
-  answers: {
-    false: [],
-    true: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_health_care_card', 'has_concession_card']
-  },
-  visible: true,
-},
-{
-  variable: 'has_health_care_card',
-  text: 'Do you have a Department of Human Services health care card?',
-  answer: null,
-  answers: {
-    false: [],
-    true: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'has_concession_card']
-  },
-  visible: true,
-},
-{
-  variable: 'has_concession_card',
-  text: 'Do you have a Department of Human Services pensioner concession card?',
-  answer: null,
-  answers: {
-    false: [],
-    true: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'has_health_care_card']
-  },
-  visible: true,
-},
-{
-  variable: 'is_australian_citizen',
-  text: 'Are you an Australian citizen?',
-  answer: null,
-  answers: {
-    false: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card'],
-    true: ['is_permanent_resident']
-  },
-  visible: true,
-},
-{
-  variable: 'is_permanent_resident',
-  text: 'Are you a Permanent Resident?',
-  answer: null,
-  answers: {
-    false: ['has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card', 'is_full_age_pension_recipient', 'is_veterans_pension_recipient', 'has_health_care_card', 'has_concession_card'],
-    true: ['is_australian_citizen']
-  },
-  visible: true,
-},
 {
   variable: 'is_full_age_pension_recipient',
   text: 'Are you a full-age pension recipient from Department of Human Services?',
@@ -149,7 +59,7 @@ export default {
   answer: null,
   answers: {
     false: [],
-    true: ['energy_bottled_gas_user', 'has_concession_card', 'has_health_care_card', 'has_department_veteran_affairs_gold_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_human_services_pensioner_concession_card']
+    true: ['energy_bottled_gas_user',]
   },
   visible: true,
 },
@@ -178,8 +88,7 @@ export default {
   text: 'Do you have an energy account in your name?',
   answer: null,
   answers: {
-    false: ['is_energy_account_holder', 'has_department_human_services_pensioner_concession_card', 'has_department_veteran_affairs_pensioner_concession_card', 'has_department_veteran_affairs_gold_card',
-    'has_health_care_card', 'has_concession_card', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user'],
+    false: ['is_energy_account_holder', 'gas_rebate__already_issued_in_financial_year', 'energy_bottled_gas_user'],
     true: []
   },
   visible: true,
@@ -190,16 +99,6 @@ export default {
   answer: null,
   answers: {
     false: ['energy_provider_supply_customer'],
-    true: []
-  },
-  visible: true,
-},
-{
-  variable: 'NRMA_free2go__is_NRMA_member',
-  text: 'Do you hold an existing NRMA membership?',
-  answer: null,
-  answers: {
-    false: ['is_act_resident', 'is_australian_citizen', 'is_permanent_resident'],
     true: []
   },
   visible: true,
@@ -240,19 +139,28 @@ export default {
 
     }
   },
+  created() {
+    this.$props.questionsToRemove.forEach( element => {
+      let questionToProcess2 = this.questions.find(question => question.variable == element)
+      if(questionToProcess2) {
+        questionToProcess2.visible = false
+      }
+    })
+  },
   destroyed() {
-    var newArray = []
-    for(var i = 1; i < this.questions.length; i++) {
-      newArray.push(this.questions[i].variable)
-    }
+    let currentMonth = (new Date().getMonth() + 1).toString()
+    const currentYear = new Date().getFullYear()
+
+    currentMonth = currentMonth.padStart(2, 0)
+    const yearMonth = currentYear + '-' + currentMonth
     const arrayToObject = (array) =>
       array.reduce((obj, item) => {
-        obj[item.variable] = { "2019-03": item.answer }
+        obj[item.variable] = { [yearMonth]: item.answer }
         return obj
       }, {})
     const arrayToObject2 = (array) =>
       array.reduce((obj, item) => {
-        obj[item.variable] = { "2019-03": null }
+        obj[item.variable] = { [yearMonth]: null }
         return obj
       }, {})
 
