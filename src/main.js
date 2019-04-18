@@ -4,6 +4,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
+import store from './store/index'
+import myMixins from './mixins/index'
 
 Vue.use(VueRouter)
 
@@ -11,11 +13,15 @@ import { routes } from './routes/index'
 
 let router = new VueRouter({
   mode: 'hash',
-  routes
+  routes,
+  store
 })
+
+Vue.mixin(myMixins)
 
 new Vue({ // eslint-disable-line no-new
   el: '#app',
   router,
+  store,
   render: (h) => h(App)
 })

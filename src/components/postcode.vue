@@ -16,7 +16,7 @@
                 <input class="au-control-input__input" name="typeOfResidency" v-model="typeOfResidency" type="radio" value="false">
                 <span class="au-control-input__text">No</span>
               </label>
-            </div><!-- end col -->
+            </div>
 
             <div class="postcode-spacing">
               <h3>Are you a NSW Resident?</h3>
@@ -29,23 +29,22 @@
                 <input class="au-control-input__input" name="NSWResidency" v-model="NSWResidency" type="radio" value="false">
                 <span class="au-control-input__text">No</span>
               </label>
-            </div><!-- end col -->
-
-         <!--  <div class="col-md-12 birthdate-spacing">
-            <label for="text-input au-text-input--block" value="day" style="width:3rem; padding: 12px;"><h3>What is your postcode?</h3></label>
-              <input class="au-text-input" id="day" v-model="day" placeholder="">
-              <br>
-              <br>
-              <br> -->
-            </div><!-- form group -->
-        </div><!-- end col -->
-      </div> <!-- row -->
-    </div><!-- postcode -->
+            </div>
+        </div>
+      </div><!-- end col -->
+    </div><!-- row -->
+    <buttons></buttons>
+  </div><!-- postcode -->
 </template>
 
 <script>
+import Buttons from './Buttons.vue'
+
 export default {
-  data() {
+  components: {
+    Buttons
+  },
+  data () {
     return {
       residencyQuestions: [
         'is_family_tax_benefit_recipient',
@@ -79,7 +78,6 @@ export default {
         is_nsw_resident: { [yearMonth]: true },
       }
       this.$emit('updateAnswers', NSWResidency)
-      
     } else {
       this.$emit('updateQuestionsToRemove', this.residencyQuestions)
     }

@@ -20,21 +20,27 @@
           </div><!-- form-group -->
         </div><!-- end col-->
       </div> <!-- row -->
+      <buttons></buttons>
     </div><!-- user-form -->
 </template>
 
 <script>
+import Buttons from './Buttons.vue'
+
 export default {
+  components: {
+    Buttons
+  },
   destroyed(){
     let dateBeforeFormat = this.year + '/' + this.month + '/' + this.day
       dateBeforeFormat = new Date(dateBeforeFormat)
-      let formatted_date =
+      let formattedDate =
           dateBeforeFormat.getFullYear() + '-'
           + ('0' + (dateBeforeFormat.getMonth()+1)).slice(-2) + '-'
           + ('0' + dateBeforeFormat.getDate()).slice(-2)
-      this.$emit('updateDateOfBirth', formatted_date)
+      this.$emit('updateDateOfBirth', formattedDate)
   },
-  data() {
+  data () {
     return {
       day: '',
       month: '',

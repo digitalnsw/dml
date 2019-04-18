@@ -6,10 +6,10 @@ import cards from '../components/cards.vue'
 import Result from '../components/Result.vue'
 
 export const routes = [
- { path: '/first-step', name: 'firstStep', component: individualOrHousehold },
- { path: '/second-step', name: 'secondStep', component: postcode },
- { path: '/third-step', name: 'thirdStep', component: radioButtons },
- { path: '/fourth-step', name: 'fourthStep', component: userForm },
- { path: '/fifth-step', name: 'fifthStep', component: cards },
- { path: '/sixth-step', name: 'sixthStep', component: Result }
+  { path: '/first-step', name: 'firstStep', component: individualOrHousehold },
+  { path: '/second-step', name: 'secondStep', component: postcode },
+  { path: '/third-step', name: 'thirdStep', component: cards },
+  { path: '/fourth-step', name: 'fourthStep', component: userForm },
+  { path: '/fifth-step', name: 'fifthStep', component: radioButtons },
+  { path: '/sixth-step', name: 'sixthStep', component: Result }
 ]
